@@ -63,8 +63,8 @@ Note:
 ---?image=/assets/images/slides/Slide4.JPG
 @title[UEFI Boot Flow]
 ### <p align="center"><span class="gold" >UEFI - PI & EDK II Boot Flow </span></p>
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
-<p align="center"><span class="slide-text5"><b>UEFI  and Platform Initialziation (PI) Boot Execution Flow</b></span></p>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<p align="center"><span style="font-size:0.6em" ><b>The folloiwng Slides show UEFI  and Platform Initialziation (PI) Boot Execution Flow</b></span></p>
 
 Note:
 The next set of slides will detail the phases of the boot execution flow for UEFI
@@ -86,7 +86,10 @@ May choose to authenticate the PEI Foundation
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
 @title[SEC - characteristics ]
-#### <p align="right"><span class="gold" >Processor Executes SEC starting at the reset vector </span></p>
+#### <p align="right"><span class="gold" >Starting at the reset vector </span></p>
+
+The Processor Executes SEC starting at the first fetch from the reset vector 
+
 - SEC Consumes the Reset vector 
 - Serving as the root of trust 
 - May choose to authenticate the PEI Foundation
@@ -281,12 +284,9 @@ DXE - EFI System Table<Br>
 Created in DXE and is the pointer to everything in the system
 
 ---?image=/assets/images/slides/Slide11.JPG
-<!-- .slide: data-transition="none" -->---
-
+<!-- .slide: data-transition="none" -->
 @title[UEFI Boot Flow DXE- UEFI Drivers]
 #### <p align="center"><span class="gold">UEFI - PI & EDK II Boot Flow </span><span style="color:white;">&nbsp;-&nbsp;<b>DXE UEFI</b> </span></p>
-
-![UEFI Boot Execution Flow](/assets/images/bgpages/bg8.png =10x)
 
 
 Note:
@@ -443,7 +443,6 @@ Defines the layout of the screen
 @title[UEFI Boot Flow HII- Simple]
 #### <p align="center"><span class="gold">UEFI - PI & EDK II Boot Flow </span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<b>HII</b> </span></p>
 
-![UEFI Boot Execution Flow](/assets/images/bgpages/bg12.png =10x)
 Note:
 HII<Br>
     Simple
@@ -474,8 +473,6 @@ UEFI Shell<Br>
 @title[UEFI Boot Flow Boot Loader]
 #### <p align="center"><span class="gold">UEFI - PI & EDK II Boot Flow </span><span style="color:white;">-&nbsp;<b>Boot Loader</b> </span></p>
 
-![UEFI Boot Execution Flow](/assets/images/bgpages/bg15.png =10x)
-
 
 Note:
 Boot Loader<Br>
@@ -485,7 +482,7 @@ Boot Loader<Br>
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
 @title[UEFI Boot Flow Boot Exit]
-#### <p align="center"><span class="gold">UEFI - PI & EDK II Boot Flow </span><span style="color:white;">-&nbsp;<b>Exit Boot Services</b> </span></p>
+#### <p align="center"><span class="gold">UEFI - PI & EDK II Boot Flow </span><span style="color:white;">-&nbsp;<b>Event</b> </span></p>
 
 Note:
 
@@ -538,19 +535,20 @@ UEFI is not available until after a reset
 ---?image=assets/images/binary-strings-black2.jpg
 @title[Intel FSP Section]
 <br><br><br><br><br>
-## <span class="gold"  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Intel® Firmware Support Package (Intel® FSP) </span>
+### <span class="gold"  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Intel® Firmware Support Package (Intel® FSP) </span>
 
 Note:
 Section on Intel FSP
 ---
 @title[Intel FSP Description]
-##### <span class="gold">Intel® FSP  -  Components </span>
+<br>
+#### <span class="gold">Intel® FSP  -  Components </span>
 - CPU, memory controller, and chipset initialization functions as a binary package
 - Provides silicon initialization ingredients
 - Plugs into existing firmware frameworks
 - Integration guide, includes API documentation
 
-<p align="left" style="margin-top: -3px; margin-bottom: -3px"><span style="color:white; font-size:0.5em"> 
+<p align="left" style="margin-top: -3px; margin-bottom: -3px"><span style="color:white; font-size:0.6em"> 
 <br>
 <BR>
 Intel FSP is currently available for the many Intel hardware-producing divisions &nbsp;&nbsp;&nbsp;
@@ -639,11 +637,12 @@ Platform Initialization (PI) & UEFI w/ EDK <Br>
 
 ---
 @title[Intel FSP Source]
+<br>
 ##### <span class="gold">Source for Intel® FSP  Producer Code</span>
-- CPU and chipset-specific code for PEIM’s inside of the Intel FSP can be open or closed, added to…
+- CPU and chipset-specific code for PEIM’s inside of the Intel FSP can be open or closed, added to… <br>
 - PEI core and infrastructure code at <a href="https://github.com/tianocore/edk2"> tianocore.org/edk2 </a>
   - <a href="https://github.com/tianocore/edk2/tree/master/MdePkg"> /MdePkg </a>
-  - <a href="https://github.com/tianocore/edk2/tree/master/MdeModulePkg"> /MdeModulePkg </a>
+  - <a href="https://github.com/tianocore/edk2/tree/master/MdeModulePkg"> /MdeModulePkg </a><br>
 - And the code to create the Intel FSP interfaces can be found at 
    - <a href="https://github.com/tianocore/edk2/tree/master/IntelFsp2Pkg"> /IntelFsp2Pkg </a>
 Note:
@@ -656,7 +655,7 @@ Talking point – anyone would could be producer.  IBV could.  Just worry about 
 ---?image=assets/images/binary-strings-black2.jpg  
 @title[Whats New in UEFI Section]    
 <br><br><br><br><br>
-## <span class="gold"  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;What's new in the UEFI Specifications  </span>
+### <span class="gold"  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;What's new in the UEFI Specifications  </span>
 
 
 
@@ -674,11 +673,12 @@ Note:
 - UEFI PI Specification v1.6 (5/2017)
 
 
----?image=/assets/images/slides/Slide33.JPG
+---
 @title[UEFI & EDK II Timeline]    
 <p align="center"<span style="color:white; font-size:0.6em"> UEFI Specification & EDK II Reference Implementation Timeline  </span></p>
 <p align="center"<span style="color:white; font-size:0.3em"> <a href="http://www.uefi.org/">UEFI Specification</a> -top &nbsp;&nbsp;&nbsp;&nbsp; & &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.tiancore.org/">EDK II Open Source</a> -bottom </span></p>
 
+![Questions](/assets/images/slides/bg30.png) 
 
 ---  
 @title[UDK2018 Key Features]    
