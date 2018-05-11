@@ -46,7 +46,7 @@ Note:
 <!---  Add bullets using https://fontawesome.com/cheatsheet certificate
 -->
  @fa[certificate gp-bullet-green]<span style="font-size:0.9em">&nbsp;&nbsp;Review PI and UEFI Boot Process  </span><br><br>
- @fa[certificate gp-bullet-cyan] <span style="font-size:0.9em">&nbsp;&nbsp;Answer web-based training related questions </span><br><br>
+ @fa[certificate gp-bullet-cyan] <span style="font-size:0.9em">&nbsp;&nbsp;Answer <a href='https://github.com/tianocore/tianocore.github.io/wiki/UEFI%20EDKII%20Learning%20Dev'>web-based training</a> related questions </span><br><br>
  @fa[certificate gp-bullet-yellow] <span style="font-size:0.9em">&nbsp;&nbsp;Answer: Where does Intel® FSP Fit? </span> <br><br>
  @fa[certificate gp-bullet-magenta] <span style="font-size:0.9em">&nbsp;&nbsp;What’s new in UEFI.org</span> 
 
@@ -666,7 +666,7 @@ Talking point – anyone would could be producer.  IBV could.  Just worry about 
 #### <p align="center"><span class="gold">Latest UEFI Specifications </span> </p>
 <p align="right"><span style="font-size:0.6em" ><a href="http://www.uefi.org"> http:///uefi.org</a></span></p>
 
-<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
 <p align="right"><span style="font-size:0.6em" ><a href="http://www.uefi.org/specsandtesttools"> http:///uefi.org/specsandtesttools </a>
 </span></p>
 
@@ -679,9 +679,10 @@ Note:
 
 ---?image=/assets/images/slides/Slide35.JPG
 <!-- .slide: data-transition="none" -->
-@title[UEFI Spec Whats New]    
+@title[UEFI Spec Whats New] 
+<br>   
 <p align="right"><span class="gold">What's New in the UEFI Specifications </span> </p>
-<br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br>
 <p align="right"><span style="font-size:0.8em" > Resources Presented at Events from <a href="http://www.uefi.org/learning_center/presentationsandvideos/">
 UEFI Forum Education Link </a></span></p>
 
@@ -727,14 +728,10 @@ Note:
 @title[Summary]
 ##### <p align="center"<span class="gold"   >Summary </span></p><br>
 
- @fa[certificate gp-bullet-green]<span style="font-size:0.9em">&nbsp;&nbsp;Review PI and UEFI Boot Process
- </span><br><br>
- @fa[certificate gp-bullet-cyan] <span style="font-size:0.9em">&nbsp;&nbsp;Answer web-based training related questions
-</span><br><br>
- @fa[certificate gp-bullet-yellow] <span style="font-size:0.9em">&nbsp;&nbsp;Answer: Where does Intel® FSP Fit? 
-</span> <br><br>
- @fa[certificate gp-bullet-magenta] <span style="font-size:0.9em">&nbsp;&nbsp;What’s new in UEFI.org
-</span> 
+ @fa[certificate gp-bullet-green]<span style="font-size:0.9em">&nbsp;&nbsp;Review PI and UEFI Boot Process  </span><br><br>
+ @fa[certificate gp-bullet-cyan] <span style="font-size:0.9em">&nbsp;&nbsp;Answer <a href='https://github.com/tianocore/tianocore.github.io/wiki/UEFI%20EDKII%20Learning%20Dev'>web-based training</a> related questions </span><br><br>
+ @fa[certificate gp-bullet-yellow] <span style="font-size:0.9em">&nbsp;&nbsp;Answer: Where does Intel® FSP Fit?  </span> <br><br>
+ @fa[certificate gp-bullet-magenta] <span style="font-size:0.9em">&nbsp;&nbsp;What’s new in UEFI.org </span> 
 
 
 
