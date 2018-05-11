@@ -535,7 +535,7 @@ UEFI is not available until after a reset
 ---?image=assets/images/binary-strings-black2.jpg
 @title[Intel FSP Section]
 <br><br><br><br><br>
-### <span class="gold"  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Intel® Firmware Support Package (Intel® FSP) </span>
+### <span class="gold"  >The Intel® Firmware Support Package (Intel® FSP) </span>
 
 Note:
 Section on Intel FSP
@@ -655,7 +655,7 @@ Talking point – anyone would could be producer.  IBV could.  Just worry about 
 ---?image=assets/images/binary-strings-black2.jpg  
 @title[Whats New in UEFI Section]    
 <br><br><br><br><br>
-### <span class="gold"  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;What's new in the UEFI Specifications  </span>
+### <span class="gold"  >What's new in the UEFI Specifications  </span>
 
 
 
@@ -666,7 +666,7 @@ Talking point – anyone would could be producer.  IBV could.  Just worry about 
 #### <p align="center"><span class="gold">Latest UEFI Specifications </span> </p>
 <p align="right"><span style="font-size:0.6em" ><a href="http://www.uefi.org"> http:///uefi.org</a></span></p>
 
-<br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
 <p align="right"><span style="font-size:0.6em" ><a href="http://www.uefi.org/specsandtesttools"> http:///uefi.org/specsandtesttools </a>
 </span></p>
 
@@ -681,6 +681,7 @@ Note:
 <!-- .slide: data-transition="none" -->
 @title[UEFI Spec Whats New]    
 <p align="right"><span class="gold">What's New in the UEFI Specifications </span> </p>
+<br><br><br><br><br><br><br><br>
 <p align="right"><span style="font-size:0.8em" > Resources Presented at Events from <a href="http://www.uefi.org/learning_center/presentationsandvideos/">
 UEFI Forum Education Link </a></span></p>
 
@@ -691,7 +692,7 @@ Note:
 <p align="center"<span style="color:white; font-size:0.6em"> UEFI Specification & EDK II Reference Implementation Timeline  </span></p>
 <p align="center"<span style="color:white; font-size:0.3em"> <a href="http://www.uefi.org/">UEFI Specification</a> -top &nbsp;&nbsp;&nbsp;&nbsp; & &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.tiancore.org/">EDK II Open Source</a> -bottom </span></p>
 
-![Questions](/assets/images/slides/bg30.png) 
+![Timeline](/assets/images/slides/bg30.png) 
 
 ---  
 @title[UDK2018 Key Features]   
@@ -751,11 +752,11 @@ Note:
 ---  
 @title[Backup]
 <br><br><br><br><br>
-### <p align="center"<span class="gold"   >Backup </span></p>
+### <p align="center"><span class="gold"   >Backup </span></p>
 
 ---
 @title[FSP detail 1]
-<p align="center"<span style="font-size:0.8em">Intel® FSP V2.0 Boot Flow</span> </p>
+<p align="center"><span style="font-size:0.8em">Intel® FSP V2.0 Boot Flow</span> </p>
 ![FSP-Detail-1](/assets/images/slides/bg48_1.png =10x) 
 <span style="font-size:0.5em"> Whitpaper:Using Intel® FSP with EDK II: <a href="https://firmware.intel.com/sites/default/files/A_Tour_Beyond_BIOS_Using_the_Intel_Firmware_Support_Package_with_the_EFI_Developer_Kit_II_(FSP2.0).pdf "> PDF</a><br>
    </span> 
@@ -772,7 +773,7 @@ Source https://firmware.intel.com/sites/default/files/A_Tour_Beyond_BIOS_Using_t
 
 ---
 @title[FSP detail 2]
-<span style="font-size:0.75em">Diagram illustrates the high level boot flow</span>
+<p align="right" ><span style="font-size:0.75em">Diagram illustrates the high level boot flow</span>
 
 ![FSP-Detail-2](/assets/images/slides/bg42_1.png =10x) 
 
@@ -791,7 +792,7 @@ https://github.com/mangguo321/Braswell/raw/master/Documents/Open_Braswell_Platfo
 
 ---
 @title[Acknowledgements]
-#### <p align="center"<span class="gold"   >Acknowledgements</span></p>
+#### <p align="center"><span class="gold"   >Acknowledgements</span></p>
 
 ```c++
 /**
