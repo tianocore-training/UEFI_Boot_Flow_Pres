@@ -664,6 +664,11 @@ Talking point – anyone would could be producer.  IBV could.  Just worry about 
 
 @title[UEFI Spec pic]    
 #### <p align="center"><span class="gold">Latest UEFI Specifications </span> </p>
+<p align="right"><span style="font-size:0.6em" ><a href="http://www.uefi.org"> http:///uefi.org</a></span></p>
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<p align="right"><span style="font-size:0.6em" ><a href="http://www.uefi.org/specsandtesttools"> http:///uefi.org/specsandtesttools </a>
+</span></p>
 
 Note:
 - UEFI Specifications v2.7A (9/2017)
@@ -672,6 +677,14 @@ Note:
 - PI Packaging Specification v1.1 (1/2016)
 - UEFI PI Specification v1.6 (5/2017)
 
+---?image=/assets/images/slides/Slide35.JPG
+<!-- .slide: data-transition="none" -->
+@title[UEFI Spec Whats New]    
+<p align="right"><span class="gold">What's New in the UEFI Specifications </span> </p>
+<p align="right"><span style="font-size:0.8em" > Resources Presented at Events from <a href="http://www.uefi.org/learning_center/presentationsandvideos/">
+UEFI Forum Education Link </a></span></p>
+
+Note:
 
 ---
 @title[UEFI & EDK II Timeline]    
@@ -681,29 +694,30 @@ Note:
 ![Questions](/assets/images/slides/bg30.png) 
 
 ---  
-@title[UDK2018 Key Features]    
-<p align="center"><span style="color:#e49436; font-size:0.95em"> UDK2018: Key Features - Q2 2018</span> </p>
-<p align="Left"><span style="color:#e49436; font-size:0.7em"> UEFI Development Kit (UDK) releases are stable, validated snapshots of EDK II  </span> </p>
+@title[UDK2018 Key Features]   
+<br> 
+<p align="center"><span style="color:#e49436; font-size: 1.0em"> UDK2018: Key Features - Q2 2018</span> </p>
+<p align="Left"><span style="color:#e49436; font-size:0.8em"> UEFI Development Kit (UDK) releases are stable, validated snapshots of EDK II  </span> </p>
 <div class="left">
      <ul>
-        <li><span style="font-size:0.5em">Industry Standards & Public Specifications</span> </li>
+        <li><span style="font-size:0.7em">Industry Standards & Public Specifications</span> </li>
         <ul>
-          <li><span style="font-size:0.5em">UEFI 2.7</span></li>
-          <li><span style="font-size:0.5em">UEFI PI 1.6</span></li>
-          <li><span style="font-size:0.5em">ACPI 6.2</span></li>
+          <li><span style="font-size:0.7em">UEFI 2.7</span></li>
+          <li><span style="font-size:0.7em">UEFI PI 1.6</span></li>
+          <li><span style="font-size:0.7em">ACPI 6.2</span></li>
         </ul>
-        <li><span style="font-size:0.5em">Centralized Config Management </span></li>
-        <li><span style="font-size:0.5em">IOMMU-based DMA Protection</span></li>
-        <li><span style="font-size:0.5em">Stack Guard, Heap Guard and NULL Pointer Detection</span></li>
+        <li><span style="font-size:0.7em">Centralized Config Management </span></li>
+        <li><span style="font-size:0.7em">IOMMU-based DMA Protection</span></li>
+        <li><span style="font-size:0.7em">Stack Guard, Heap Guard and NULL Pointer Detection</span></li>
     </ul>
 </div>
 <div class="right">
     <ul>
-        <li><span style="font-size:0.5em">Compilers / Tools</span></li>
-        <li><span style="font-size:0.5em">Microsoft Visual Studio 2017 tool chain</span></li>
-        <li><span style="font-size:0.5em">Hash-based incremental build</span></li>
-        <li><span style="font-size:0.5em">Build time improvement using multi-threading in GenFds to generate FFS files</span></li>
-        <li><span style="font-size:0.5em">More Info: 
+        <li><span style="font-size:0.7em">Compilers / Tools</span></li>
+        <li><span style="font-size:0.7em">Microsoft Visual Studio 2017 tool chain</span></li>
+        <li><span style="font-size:0.7em">Hash-based incremental build</span></li>
+        <li><span style="font-size:0.7em">Build time improvement using multi-threading in GenFds to generate FFS files</span></li>
+        <li><span style="font-size:0.7em">More Info: 
 	<a href="https://github.com/tianocore/tianocore.github.io/wiki/UDK2018#edk-ii-specification-for-udk2018">TianoCore Wiki UDK2018 </a></span></li>
     </ul>
 </div>
@@ -758,7 +772,7 @@ Source https://firmware.intel.com/sites/default/files/A_Tour_Beyond_BIOS_Using_t
 
 ---
 @title[FSP detail 2]
-<span style="font-size:0.75em">The following diagram illustrates the high level boot flow</span>
+<span style="font-size:0.75em">Diagram illustrates the high level boot flow</span>
 
 ![FSP-Detail-2](/assets/images/slides/bg42_1.png =10x) 
 
@@ -772,7 +786,7 @@ https://github.com/mangguo321/Braswell/raw/master/Documents/Open_Braswell_Platfo
 
 ---?image=assets/images/gitpitch-audience.jpg
 @title[Logo Slide]
-
+<BR><BR><BR>
 ![Logo Slide](/assets/images/TianocoreLogo.png =10x)
 
 ---
