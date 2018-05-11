@@ -1,5 +1,6 @@
 ---?image=assets/images/gitpitch-audience.jpg
 @title[UEFI Foot Flow & Overview]
+<br><br><br><br><br>
 ## <span class="gold"   >UEFI & EDK II Training</span>
 
 #### UEFI and Platform Initialization (PI) Boot Flow & Overview 
@@ -62,8 +63,8 @@ Note:
 ---?image=/assets/images/slides/Slide4.JPG
 @title[UEFI Boot Flow]
 ### <p align="center"><span class="gold" >UEFI - PI & EDK II Boot Flow </span></p>
-<br><br><br><br><br><br><br><br><br><br>
-<p><span class="slide-text5"><b>UEFI  and Platform Initialziation (PI) Boot Execution Flow</b></span></p>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+<p align="center"><span class="slide-text5"><b>UEFI  and Platform Initialziation (PI) Boot Execution Flow</b></span></p>
 
 Note:
 The next set of slides will detail the phases of the boot execution flow for UEFI
@@ -72,9 +73,6 @@ The next set of slides will detail the phases of the boot execution flow for UEF
 <!-- .slide: data-transition="none" -->		 
 @title[UEFI Boot Flow Sec]
 #### <p align="center"><span class="gold" > UEFI - PI & EDK II Boot Flow </span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<b>SEC</b> </span></p>
-
-![UEFI Boot Execution Flow](/assets/images/bgpages/bg4.png =10x)
-
 
 Note:
 SEC Function <Br>
@@ -88,7 +86,7 @@ May choose to authenticate the PEI Foundation
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
 @title[SEC - characteristics ]
-#### <p align="center"><span class="gold" >Processor Executes SEC starting at the reset vector </span></p>
+#### <p align="right"><span class="gold" >Processor Executes SEC starting at the reset vector </span></p>
 - SEC Consumes the Reset vector 
 - Serving as the root of trust 
 - May choose to authenticate the PEI Foundation
@@ -121,7 +119,7 @@ SEC will have Platform specific functions
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
 @title[SEC - Firmware Terms ]
-#### <p align="center"><span class="gold" >Terms to know about the Flash Device </span></p>
+#### <p align="right"><span class="gold" >Terms to know about the Flash Device </span></p>
 - Firmware Volume (FV) 
   - The basic storage with a firmware device
 - Firmware File System (FFS)
@@ -208,7 +206,7 @@ DXE drivers are typically stored in flash in compressed form and must be decompr
 
 +++
 @title[DXE Characteristics]
-#### <p align="center"><span class="gold"   >DXE Characteristics & Responsibilities  </span></p>
+#### <p align="right"><span class="gold"   >DXE Characteristics & Responsibilities  </span></p>
 - Consumes HOB List from PEI
 - Builds UEFI and DXE Service Tables  
 - EFI System Table
@@ -272,7 +270,7 @@ There is also the option of converting all of the UEFI Runtime Services from a p
 
 Let’s take a quick look at the end product of Framework—the tables that Framework will create for UEFI aware Operating systems.   They are implemented by the drivers dispatched during the DXE phase.  As specified by the UEFI spec, there are boot-time services and runtime services.  There is a handle database and a list of all the protocols that these handles have associated with them.  Of course, keep in mind that all these will be gone from memory when the OS has booted.  The only things that will remain are the runtime services.
 
-+++?image=/assets/images/slides2/Slide10.JPG
++++?image=/assets/images/slides/Slide10.JPG
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
 @title[UEFI Boot Flow EFI System Table]
@@ -282,7 +280,7 @@ Note:
 DXE - EFI System Table<Br>   
 Created in DXE and is the pointer to everything in the system
 
----?image=/assets/images/slides2/Slide11.JPG
+---?image=/assets/images/slides/Slide11.JPG
 <!-- .slide: data-transition="none" -->---
 
 @title[UEFI Boot Flow DXE- UEFI Drivers]
@@ -323,7 +321,7 @@ DXE - UEFI Drivers<Br>
 - Driver Health
 - Unload
 
----?image=/assets/images/slides2/Slide12.JPG
+---?image=/assets/images/slides/Slide12.JPG
 <!-- .slide: data-transition="none" -->
 
 @title[UEFI Boot Flow BDS]
@@ -354,7 +352,7 @@ BDS enumerates all possible boot devices in the system and create their boot opt
 - Binary description of the physical location of a specific target
 
 
-+++?image=/assets/images/slides2/Slide13.JPG
++++?image=/assets/images/slides/Slide13.JPG
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
 @title[UEFI Boot Flow Device Path]
@@ -396,7 +394,7 @@ Assuming a complete and successful execution of Diagnostics, the OS loader will 
 
 This Boot of the operating system was initiated, and successful, starting from a a simple path defining the device (location) from which to boot, and ending with a viable OS execution on the platfrom. 
 
----?image=/assets/images/slides2/Slide14.JPG
+---?image=/assets/images/slides/Slide14.JPG
 <!-- .slide: data-transition="none" -->
 
 @title[UEFI Boot Flow HII]
@@ -438,7 +436,7 @@ Defines strings in different languages
 Defines the layout of the screen 
 .inf    Pre-Make file 
 
-+++?image=/assets/images/slides2/Slide15.JPG
++++?image=/assets/images/slides/Slide15.JPG
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->	
     
@@ -449,7 +447,7 @@ Defines the layout of the screen
 Note:
 HII<Br>
     Simple
-+++?image=/assets/images/slides2/Slide16.JPG
++++?image=/assets/images/slides/Slide16.JPG
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
 @title[UEFI Boot Flow HII- Complex]
@@ -460,7 +458,7 @@ HII<Br>
     Complex
 
 	
----?image=/assets/images/slides2/Slide17.JPG
+---?image=/assets/images/slides/Slide17.JPG
 <!-- .slide: data-transition="none" -->
 @title[UEFI Boot Flow Shell]
 #### <p align="center"><span class="gold">UEFI - PI & EDK II Boot Flow </span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<b>TSL</b> </span></p>
@@ -471,7 +469,7 @@ Note:
 UEFI Shell<Br>
 - UEFI Shell has complete control of the whole platform and resources
 	
----?image=/assets/images/slides2/Slide18.JPG
+---?image=/assets/images/slides/Slide18.JPG
 <!-- .slide: data-transition="none" -->
 @title[UEFI Boot Flow Boot Loader]
 #### <p align="center"><span class="gold">UEFI - PI & EDK II Boot Flow </span><span style="color:white;">-&nbsp;<b>Boot Loader</b> </span></p>
@@ -483,7 +481,7 @@ Note:
 Boot Loader<Br>
 - OS Boot Loader Application will call "Exit Boot Services"
 	
-+++?image=/assets/images/slides2/Slide19.JPG
++++?image=/assets/images/slides/Slide19.JPG
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
 @title[UEFI Boot Flow Boot Exit]
@@ -492,7 +490,7 @@ Boot Loader<Br>
 Note:
 
 	
-+++?image=/assets/images/slides2/Slide20.JPG
++++?image=/assets/images/slides/Slide20.JPG
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
 @title[UEFI Boot Flow Boot OS]
@@ -517,7 +515,7 @@ Run Time
 
 - When the OS takes over it can provide a virtual address space for the EFI Runtime Services. See UEFI 2.5 Chapter 7 Runtime Services - 7.4 Virtual Memory Services
 
----?image=/assets/images/slides2/Slide21.JPG
+---?image=/assets/images/slides/Slide21.JPG
 <!-- .slide: data-transition="none" -->
 @title[UEFI Boot Legacy]
 #### <p align="center"><span class="gold">UEFI - PI & EDK II Boot Flow </span><span style="color:white;">-&nbsp;<b>Boot Legacy</b> </span></p>
@@ -526,7 +524,7 @@ Run Time
 Note:
 Legacy boot with CSM<Br>
 
-+++?image=/assets/images/slides2/Slide22.JPG
++++?image=/assets/images/slides/Slide22.JPG
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
 @title[UEFI Boot Legacy no UEFI]
@@ -565,7 +563,7 @@ The Intel® Firmware Support Package (Intel® FSP) is a royalty-free option fo
 Intel FSP is designed for integration into a variety of boot loaders, including coreboot and TianoCore (open source Unified Extensible Firmware Interface [UEFI]).
 
 
----?image=/assets/images/slides2/Slide24.JPG
+---?image=/assets/images/slides/Slide24.JPG
 <!-- .slide: data-transition="none" -->
 @title[Intel FSP Diagram-1]
 #### <p align="center"><span class="gold">Intel® FSP to Open Source EDK II </span>
@@ -573,7 +571,7 @@ Intel FSP is designed for integration into a variety of boot loaders, including 
 
 Note:
 Intel FSP 1<Br>
-+++?image=/assets/images/slides2/Slide25.JPG
++++?image=/assets/images/slides/Slide25.JPG
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
 @title[Intel FSP Diagram-2]
@@ -584,7 +582,7 @@ Intel FSP 1<Br>
 Note:
 Intel FSP 2<Br>    
 
-+++?image=/assets/images/slides2/Slide26.JPG
++++?image=/assets/images/slides/Slide26.JPG
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
 @title[Intel FSP Diagram-3]
@@ -595,7 +593,7 @@ Intel®  FSP "Produced" to <br> "Consuming" Intel® Architecture Firmware </span
 Note:
 Applying “Produced” Intel® Firmware Support Package (FSP) to “Consuming” IA firmware <Br>  
 
----?image=/assets/images/slides2/Slide27.JPG
+---?image=/assets/images/slides/Slide27.JPG
 <!-- .slide: data-transition="none" -->
 
 @title[Intel FSP from UEFI Boot Flow]
@@ -606,7 +604,7 @@ Note:
 Platform Initialization (PI) & UEFI w/ EDK <Br>
 - Intel FSP boot flow   
  
-+++?image=/assets/images/slides2/Slide28.JPG
++++?image=/assets/images/slides/Slide28.JPG
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
 @title[Intel FSP from UEFI Boot Flow 2]
@@ -662,7 +660,7 @@ Talking point – anyone would could be producer.  IBV could.  Just worry about 
 
 
 
----?image=/assets/images/slides2/Slide32.JPG
+---?image=/assets/images/slides/Slide32.JPG
 <!-- .slide: data-transition="none" -->
 
 @title[UEFI Spec pic]    
@@ -676,7 +674,7 @@ Note:
 - UEFI PI Specification v1.6 (5/2017)
 
 
----?image=/assets/images/slides2/Slide33.JPG
+---?image=/assets/images/slides/Slide33.JPG
 @title[UEFI & EDK II Timeline]    
 <p align="center"<span style="color:white; font-size:0.6em"> UEFI Specification & EDK II Reference Implementation Timeline  </span></p>
 <p align="center"<span style="color:white; font-size:0.3em"> <a href="http://www.uefi.org/">UEFI Specification</a> -top &nbsp;&nbsp;&nbsp;&nbsp; & &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.tiancore.org/">EDK II Open Source</a> -bottom </span></p>
