@@ -690,8 +690,8 @@ Note:
 
 ---
 @title[UEFI & EDK II Timeline]    
-<p align="center"<span style="color:white; font-size:0.6em"> UEFI Specification & EDK II Reference Implementation Timeline  </span></p>
-<p align="center"<span style="color:white; font-size:0.3em"> <a href="http://www.uefi.org/">UEFI Specification</a> -top &nbsp;&nbsp;&nbsp;&nbsp; & &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.tiancore.org/">EDK II Open Source</a> -bottom </span></p>
+<p align="center"<span style="color:white; font-size:0.7em"> UEFI Specification & EDK II Reference Implementation Timeline  </span></p>
+<p align="center"<span style="color:white; font-size:0.4em"> <a href="http://www.uefi.org/">UEFI Specification</a> -top &nbsp;&nbsp;&nbsp;&nbsp; & &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.tiancore.org/">EDK II Open Source</a> -bottom </span></p>
 
 ![Timeline](/assets/images/slides/bg30.png) 
 
@@ -755,10 +755,8 @@ Note:
 @title[FSP detail 1]
 <p align="center"><span style="font-size:0.8em">Intel® FSP V2.0 Boot Flow</span> </p>
 ![FSP-Detail-1](/assets/images/slides/bg48_1.png =10x) 
-<span style="font-size:0.5em"> Whitpaper:Using Intel® FSP with EDK II: <a href="https://firmware.intel.com/sites/default/files/A_Tour_Beyond_BIOS_Using_the_Intel_Firmware_Support_Package_with_the_EFI_Developer_Kit_II_(FSP2.0).pdf "> PDF</a><br>
-   </span> 
-<span style="font-size:0.3em"> Intel® Firmware Support Package (Intel® FSP)
-   </span> 
+<p><span style="font-size:0.5em"> Whitpaper:Using Intel® FSP with EDK II: <a href="https://firmware.intel.com/sites/default/files/A_Tour_Beyond_BIOS_Using_the_Intel_Firmware_Support_Package_with_the_EFI_Developer_Kit_II_(FSP2.0).pdf "> PDF</a><br>
+</span> <span style="font-size:0.3em"> Intel® Firmware Support Package (Intel® FSP)   </span> </p>
 	
 Note:
 The Intel® Firmware Support Package (Intel® FSP) [FSP] provides key programming information for initializing Intel silicon and can be easily integrated into a firmware boot environment of the developer’s choice. 
