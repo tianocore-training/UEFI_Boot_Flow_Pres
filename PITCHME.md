@@ -615,6 +615,23 @@ Platform Initialization (PI) & UEFI w/ EDK <Br>
 
 
 ---
+@title[Intel FSP Producer]
+##### <p align="center"<span class="gold">Intel® FSP  - Producer </span></p>
+<ul>
+  <li><span style="font-size:0.8em" > Examples of binary instances on   <a href="http://www.intel.com/fsp">http://www.intel.com/fsp </a> with integration guides</span></li>
+  <ul style="list-style-type:disc">
+    <li><span style="font-size:0.7em" >This includes hardware initialization code that is EDK II based PEI Modules (PEIM’s)</span></li>
+  </ul>
+  <li><span style="font-size:0.8em" >Modules are encapsulated as a UEFI PI firmware volume w/ extra header</span></li>
+  <li><span style="font-size:0.8em" >Configure w/Vital Product Data (VPD)-style Platform Configuration Data (PCD) externalized from the modules</span></li>
+  <li><span style="font-size:0.8em" >Resultant output state reported via UEFI Platform Initialization (PI) Hand Off Block (HOB)</span></li>
+</ul>
+<p style="line-height:50%"><span style="font-size:0.5em" > <a href="http://www.intel.com/content/dam/www/public/us/en/documents/technical-specifications/fsp-architecture-spec-v2.pdf"> Intel® Firmware Support Package (Intel® FSP) External Architecture Specification (EAS) v2.0 PDF </a><BR>
+ Resource: <a href="https://firmware.intel.com/blog/open-source-platforms-edkii-using-intel-fsp">https://firmware.intel.com/blog/open-source-platforms-edkii-using-intel-fsp  </a> </span> </p>
+
+Note:
+
+---
 
 @title[Intel FSP Producer]
 ##### <p align="center"<span class="gold">Intel® FSP  - Producer </span></p>
@@ -625,6 +642,8 @@ Platform Initialization (PI) & UEFI w/ EDK <Br>
 - Modules are encapsulated as a UEFI PI firmware volume 		w/ extra header<BR>
 - Configure w/Vital Product Data (VPD)-style Platform 		Configuration Data (PCD) externalized from the modules
 
+Note:
+
 +++
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
@@ -634,6 +653,8 @@ Platform Initialization (PI) & UEFI w/ EDK <Br>
 - Resultant output state reported via UEFI Platform 		Initialization (PI) Hand Off Block (HOB)<BR>
 - <a href="http://www.intel.com/content/dam/www/public/us/en/documents/technical-specifications/fsp-architecture-spec-v2.pdf"> Intel® Firmware Support Package (Intel® FSP) External Architecture Specification (EAS) v2.0 PDF </a><BR>
 - Resource: https://firmware.intel.com/blog/open-source-platforms-edkii-using-intel-fsp
+
+Note:
 
 ---
 @title[Intel FSP Source]
