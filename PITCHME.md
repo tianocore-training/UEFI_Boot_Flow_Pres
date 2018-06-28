@@ -642,7 +642,7 @@ Note:
 - And the code to create the Intel FSP interfaces can be found at 
    - <span style="font-size:0.8em" ><a href="https://github.com/tianocore/edk2/tree/master/IntelFsp2Pkg"> `/IntelFsp2Pkg` </a></span>
 
-<p align="center"><span style="background-color: #7030A0"><span style="font-size:0.9em" >&nbsp;&nbsp;&nbsp;&nbsp;Intel FSP can encapsulate IP protected initialization &nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code PRODUCED by Intel business units&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+<p align="center" style="line-height:80%"><span style="background-color: #7030A0"><span style="font-size:0.9em" >&nbsp;&nbsp;&nbsp;&nbsp;Intel FSP can encapsulate IP protected initialization &nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code PRODUCED by Intel business units&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
 
 Note:
 
