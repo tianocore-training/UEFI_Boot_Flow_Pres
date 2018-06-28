@@ -634,16 +634,15 @@ Note:
 
 ---
 @title[Intel FSP Source]
-<br>
-##### <span class="gold">Source for Intel® FSP  Producer Code</span>
+##### <p align="right"><span class="gold">Source for Intel® FSP  Producer Code</span></p>
 - CPU and chipset-specific code for PEIM’s inside of the Intel FSP can be open or closed, added to… <br>
 - PEI core and infrastructure code at <a href="https://github.com/tianocore/edk2"> tianocore.org/edk2 </a>
-  - <a href="https://github.com/tianocore/edk2/tree/master/MdePkg"> `/MdePkg` </a>
-  - <a href="https://github.com/tianocore/edk2/tree/master/MdeModulePkg"> `/MdeModulePkg` </a><br>
+  - <span style="font-size:0.8em" ><a href="https://github.com/tianocore/edk2/tree/master/MdePkg"> `/MdePkg` </a></span>
+  - <span style="font-size:0.8em" ><a href="https://github.com/tianocore/edk2/tree/master/MdeModulePkg"> `/MdeModulePkg` </a></span><br>
 - And the code to create the Intel FSP interfaces can be found at 
-   - <a href="https://github.com/tianocore/edk2/tree/master/IntelFsp2Pkg"> `/IntelFsp2Pkg` </a>
+   - <span style="font-size:0.8em" ><a href="https://github.com/tianocore/edk2/tree/master/IntelFsp2Pkg"> `/IntelFsp2Pkg` </a></span>
 
-<p style="line-height:80%" align="center"><span style="background-color: #7030A0"><span style="font-size:0.9em" >Intel FSP can encapsulate IP protected initialization code <br>PRODUCED by Intel business units</span></span></p>
+<p align="center"><span style="background-color: #7030A0"><span style="font-size:0.9em" >&nbsp;&nbsp;&nbsp;&nbsp;Intel FSP can encapsulate IP protected initialization code &nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRODUCED by Intel business units&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
 
 Note:
 
