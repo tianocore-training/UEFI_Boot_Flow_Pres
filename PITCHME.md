@@ -631,30 +631,6 @@ Platform Initialization (PI) & UEFI w/ EDK <Br>
 
 Note:
 
----
-
-@title[Intel FSP Producer]
-##### <p align="center"<span class="gold">Intel® FSP  - Producer </span></p>
-
-
-- Examples of binary instances on http://www.intel.com/fsp 		with integration guides<br>  
-    - This includes hardware initialization code that is EDK II based PEI Modules (PEIM’s)<BR>
-- Modules are encapsulated as a UEFI PI firmware volume 		w/ extra header<BR>
-- Configure w/Vital Product Data (VPD)-style Platform 		Configuration Data (PCD) externalized from the modules
-
-Note:
-
-+++
-<!-- .slide: data-background-transition="none" -->
-<!-- .slide: data-transition="none" -->
-@title[Intel FSP Producer- Continued]
-##### <p align="center"<span class="gold">Intel® FSP  - Producer </span><span<span style="color:white; font-size:0.7em"> -Continued </span></p>
-<BR>
-- Resultant output state reported via UEFI Platform 		Initialization (PI) Hand Off Block (HOB)<BR>
-- <a href="http://www.intel.com/content/dam/www/public/us/en/documents/technical-specifications/fsp-architecture-spec-v2.pdf"> Intel® Firmware Support Package (Intel® FSP) External Architecture Specification (EAS) v2.0 PDF </a><BR>
-- Resource: https://firmware.intel.com/blog/open-source-platforms-edkii-using-intel-fsp
-
-Note:
 
 ---
 @title[Intel FSP Source]
@@ -662,10 +638,13 @@ Note:
 ##### <span class="gold">Source for Intel® FSP  Producer Code</span>
 - CPU and chipset-specific code for PEIM’s inside of the Intel FSP can be open or closed, added to… <br>
 - PEI core and infrastructure code at <a href="https://github.com/tianocore/edk2"> tianocore.org/edk2 </a>
-  - <a href="https://github.com/tianocore/edk2/tree/master/MdePkg"> /MdePkg </a>
-  - <a href="https://github.com/tianocore/edk2/tree/master/MdeModulePkg"> /MdeModulePkg </a><br>
+  - <a href="https://github.com/tianocore/edk2/tree/master/MdePkg"> `/MdePkg` </a>
+  - <a href="https://github.com/tianocore/edk2/tree/master/MdeModulePkg"> `/MdeModulePkg` </a><br>
 - And the code to create the Intel FSP interfaces can be found at 
-   - <a href="https://github.com/tianocore/edk2/tree/master/IntelFsp2Pkg"> /IntelFsp2Pkg </a>
+   - <a href="https://github.com/tianocore/edk2/tree/master/IntelFsp2Pkg"> `/IntelFsp2Pkg` </a>
+
+<p style="line-height:60%" align="center"><span style="background-color: #FF00FF"><span style="font-size:01.1em" >Intel FSP can encapsulate IP protected initialization code <br>PRODUCED by Intel business units</span></span></p>
+
 Note:
 
 All of the public FSP’s are ‘EDK2-based’.   This package is the alignment of producing FSP’s going forward w/ aligned code.  This is the silicon reference code which is currently NDA – memory init PEIM + PCH init + uncore init.  It is a subset of the silicon pieces we have today.  Today’s RC is the superset.  Align customization over time.
