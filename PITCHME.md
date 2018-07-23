@@ -551,10 +551,10 @@ Section on Intel FSP
 <p align="left" style="margin-top: -3px; margin-bottom: -3px"><span style="color:white; font-size:0.6em"> 
 <br>
 <BR>
-Intel FSP is currently available for the many Intel hardware-producing divisions &nbsp;&nbsp;&nbsp;
-See: <a href="https://firmware.intel.com/learn/fsp/about-intel-fsp"> About Intel FSP</a> <br>
-White Paper Example: <a href="https://github.com/mangguo321/Braswell/blob/master/Documents/Open_Braswell_Platform_Designing_Porting_Guide.pdf">
-Open Braswell - Design and Porting Guide</a></span></p>
+<p style="line-height:70%"><span style="font-size:0.8em" >Intel FSP is currently available for the many Intel hardware-producing divisions &nbsp;&nbsp;&nbsp;
+See: <a href="https://firmware.intel.com/learn/fsp/about-intel-fsp"> About Intel FSP</a> </span></p>
+<p style="line-height:70%"><span style="font-size:0.8em" >White Paper Example: <a href="https://github.com/mangguo321/Braswell/blob/master/Documents/Open_Braswell_Platform_Designing_Porting_Guide.pdf">
+Open Braswell - Design and Porting Guide</a></span></span></p>
 
 Note:
 The Intel® Firmware Support Package (Intel® FSP) is a royalty-free option for initializing Intel silicon, designed for integration into a boot loader of the developer's choice. It is easy to adopt, is scalable to design, reduces time to market, and is economical to build. Intel FSP provides a binary package to initialize the processor, memory controller, and Intel® chipset initialization functions.
@@ -617,10 +617,10 @@ Platform Initialization (PI) & UEFI w/ EDK <Br>
 ---
 @title[Intel FSP Producer]
 ##### <p align="center"<span class="gold">Intel® FSP  - Producer </span></p>
-<ul>
+<ul style="line-height:0.8;">
   <li><span style="font-size:0.8em" > Examples of binary instances on   <a href="http://www.intel.com/fsp">http://www.intel.com/fsp </a> with integration guides</span></li>
-  <ul style="list-style-type:disc">
-    <li><span style="font-size:0.7em" >This includes hardware initialization code that is EDK II based PEI Modules (PEIM’s)</span></li>
+  <ul style="list-style-type:disc" style="line-height:0.8;" >
+    <li><span style="font-size:0.67em" >This includes hardware initialization code that is EDK II based PEI Modules (PEIM’s)</span></li>
   </ul>
   <li><span style="font-size:0.8em" >Modules are encapsulated as a UEFI PI firmware volume w/ extra header</span></li>
   <li><span style="font-size:0.8em" >Configure w/Vital Product Data (VPD)-style Platform Configuration Data (PCD) externalized from the modules</span></li>
@@ -635,13 +635,17 @@ Note:
 ---
 @title[Intel FSP Source]
 ##### <p align="right"><span class="gold">Source for Intel® FSP  Producer Code</span></p>
-- CPU and chipset-specific code for PEIM’s inside of the Intel FSP can be open or closed, added to… <br>
-- PEI core and infrastructure code at <a href="https://github.com/tianocore/edk2"> tianocore.org/edk2 </a>
-  - <span style="font-size:0.8em" ><a href="https://github.com/tianocore/edk2/tree/master/MdePkg"> `/MdePkg` </a></span>
-  - <span style="font-size:0.8em" ><a href="https://github.com/tianocore/edk2/tree/master/MdeModulePkg"> `/MdeModulePkg` </a></span><br>
-- And the code to create the Intel FSP interfaces can be found at 
-   - <span style="font-size:0.8em" ><a href="https://github.com/tianocore/edk2/tree/master/IntelFsp2Pkg"> `/IntelFsp2Pkg` </a></span>
-
+<ul style="line-height:0.8;">
+  <li><span style="font-size:0.8em" >CPU and chipset-specific code for PEIM’s inside of the Intel FSP can be open or closed, added to… </span></li>
+  <li><span style="font-size:0.8em" >PEI core and infrastructure code at <a href="https://github.com/tianocore/edk2"> tianocore.org/edk2 </a></span></li>
+  <ul style="list-style-type:disc" style="line-height:0.8;" >
+     <li><span style="font-size:0.7em" ><a href="https://github.com/tianocore/edk2/tree/master/MdePkg"> `/MdePkg` </a></span></li>
+     <li><span style="font-size:0.7em" ><a href="https://github.com/tianocore/edk2/tree/master/MdeModulePkg"> `/MdeModulePkg` </a></span></li>
+  </ul>
+  <li><span style="font-size:0.8em" >And the code to create the Intel FSP interfaces can be found at</span></li> 
+   <ul style="list-style-type:disc" style="line-height:0.8;" >
+     <li><span style="font-size:0.7em" ><a href="https://github.com/tianocore/edk2/tree/master/IntelFsp2Pkg"> `/IntelFsp2Pkg` </a></span></li>
+   </li>
 <p align="center" style="line-height:100%"><span style="background-color: #7030A0"><span style="font-size:0.9em" >&nbsp;&nbsp;&nbsp;&nbsp;Intel FSP can encapsulate IP protected initialization &nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code PRODUCED by Intel business units&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
 
 Note:
