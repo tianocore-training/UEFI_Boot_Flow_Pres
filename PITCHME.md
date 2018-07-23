@@ -649,7 +649,7 @@ Note:
    </li>
 <br>
 <br>
-<p align="center" style="line-height:100%"><span style="background-color: #7030A0"><span style="font-size:0.85em" >&nbsp;&nbsp;&nbsp;&nbsp;Intel FSP can encapsulate IP protected initialization &nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code PRODUCED by Intel business units&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+<p align="center" style="line-height:100%"><span style="background-color: #7030A0"><span style="font-size:0.85em" >&nbsp;&nbsp;&nbsp;&nbsp;Intel FSP can encapsulate IP protected initialization &nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code PRODUCED by Intel business units&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
 
 Note:
 
