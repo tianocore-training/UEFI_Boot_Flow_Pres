@@ -646,6 +646,8 @@ Note:
    <ul style="list-style-type:disc" style="line-height:0.8;" >
      <li><span style="font-size:0.7em" ><a href="https://github.com/tianocore/edk2/tree/master/IntelFsp2Pkg"> `/IntelFsp2Pkg` </a></span></li>
    </li>
+<br>
+<br>
 <p align="center" style="line-height:100%"><span style="background-color: #7030A0"><span style="font-size:0.9em" >&nbsp;&nbsp;&nbsp;&nbsp;Intel FSP can encapsulate IP protected initialization &nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code PRODUCED by Intel business units&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
 
 Note:
