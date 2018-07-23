@@ -635,12 +635,13 @@ Note:
 ---
 @title[Intel FSP Source]
 ##### <p align="right"><span class="gold">Source for Intel® FSP  Producer Code</span></p>
+
 <ul style="line-height:0.8;">
-  <li><span style="font-size:0.8em" >CPU and chipset-specific code for PEIM’s inside of the Intel FSP can be open or closed, added to… </span></li>
+  <li><span style="font-size:0.8em" >CPU and chipset-specific code for PEIM’s inside of the Intel FSP can be open or closed, added to… </span></li><br>
   <li><span style="font-size:0.8em" >PEI core and infrastructure code at <a href="https://github.com/tianocore/edk2"> tianocore.org/edk2 </a></span></li>
   <ul style="list-style-type:disc" style="line-height:0.8;" >
      <li><span style="font-size:0.7em" ><a href="https://github.com/tianocore/edk2/tree/master/MdePkg"> `/MdePkg` </a></span></li>
-     <li><span style="font-size:0.7em" ><a href="https://github.com/tianocore/edk2/tree/master/MdeModulePkg"> `/MdeModulePkg` </a></span></li>
+     <li><span style="font-size:0.7em" ><a href="https://github.com/tianocore/edk2/tree/master/MdeModulePkg"> `/MdeModulePkg` </a></span></li><br>
   </ul>
   <li><span style="font-size:0.8em" >And the code to create the Intel FSP interfaces can be found at</span></li> 
    <ul style="list-style-type:disc" style="line-height:0.8;" >
