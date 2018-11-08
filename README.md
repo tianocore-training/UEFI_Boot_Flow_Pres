@@ -32,5 +32,5 @@
 # UEFI Boot Flow and Overview Presentation
 
   Overview of the UEFI &amp; PI Boot Flow process
-To see the Slides goto https://gitpitch.com/Laurie0131/UEFI_Boot_Flow_Pres2/master#/
+To see the Slides goto https://gitpitch.com/tianocore-training/UEFI_Boot_Flow_Pres2/master#/
 
