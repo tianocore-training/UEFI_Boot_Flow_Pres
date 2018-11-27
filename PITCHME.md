@@ -649,7 +649,7 @@ Note:
    </li>
 <br>
 <br>
-<p align="center" style="line-height:100%"><span style="background-color: #7030A0"><span style="font-size:0.85em" >&nbsp;&nbsp;&nbsp;&nbsp;Intel FSP can encapsulate IP protected initialization &nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code PRODUCED by Intel business units&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+@box[bg-purple text-white rounded fragment](Intel FSP can encapsulate IP protected initialization code PRODUCED by Intel business units) -
 
 Note:
 
@@ -759,10 +759,10 @@ Note:
 
 ---
 @title[FSP detail 1]
-<p align="center"><span style="font-size:0.8em">Intel® FSP V2.0 Boot Flow</span> </p>
+<p align="center"><span style="font-size:0.8em"><b>Intel® FSP V2.0 Boot Flow</b></span> </p>
 ![FSP-Detail-1](/assets/images/slides/bg48_1.jpg =10x) 
-<p><span style="font-size:0.5em"> Whitpaper:Using Intel® FSP with EDK II: <a href="https://firmware.intel.com/sites/default/files/A_Tour_Beyond_BIOS_Using_the_Intel_Firmware_Support_Package_with_the_EFI_Developer_Kit_II_(FSP2.0).pdf "> PDF</a><br>
-</span> <span style="font-size:0.3em"> Intel® Firmware Support Package (Intel® FSP)   </span> </p>
+<p style="line-height:50%"><span style="font-size:0.5em"> Whitpaper:Using Intel® FSP with EDK II: <a href="https://firmware.intel.com/sites/default/files/A_Tour_Beyond_BIOS_Using_the_Intel_Firmware_Support_Package_with_the_EFI_Developer_Kit_II_(FSP2.0).pdf "> PDF</a>
+<br></span> <span style="font-size:0.3em"> Intel® Firmware Support Package (Intel® FSP)   </span> </p>
 	
 Note:
 The Intel® Firmware Support Package (Intel® FSP) [FSP] provides key programming information for initializing Intel silicon and can be easily integrated into a firmware boot environment of the developer’s choice. 
