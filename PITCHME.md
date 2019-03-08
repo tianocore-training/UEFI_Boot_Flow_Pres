@@ -10,7 +10,7 @@
 Note:
   PITCHME.md for UEFI / EDK II Training  UEFI Boot flow and Overview
 
-  Copyright (c) 2018, Intel Corporation. All rights reserved.<BR>
+  Copyright (c) 2019, Intel Corporation. All rights reserved.<BR>
 
   Redistribution and use in source (original document form) and 'compiled'
   forms (converted to PDF, epub, HTML and other formats) with or without
@@ -352,12 +352,19 @@ BDS enumerates all possible boot devices in the system and create their boot opt
 - Binary description of the physical location of a specific target
 
 
-+++?image=/assets/images/slides/Slide13.JPG
++++?image=/assets/images/slides/Slide17_1.JPG
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
 @title[UEFI Boot Flow Device Path]
-#### <p align="center"><span class="gold">UEFI Device Path and Global Variables</span>
+#### <p align="right"><span class="gold">UEFI Device Path and Global Variables</span>
+<p style="line-height:80%" align="left"><span style="font-size:0.90em;" >
+The UEFI Device Path describes a boot target <br>
+&nbsp;&bull; &nbsp;@size[.70em;](Binary description of the physical location of a specific target)
+</span></p>
+```
+   Acpi(PNP0A03,0) /Pci(1F|1) /Ata(Primary,Master) /HD(Part3, Sig010…) \EFI\Boot/OSLoader.efi
 
+```
 
 Note:
 Device Path and Global Variables<Br>
@@ -631,7 +638,6 @@ Platform Initialization (PI) & UEFI w/ EDK <Br>
 
 Note:
 
-
 ---
 @title[Intel FSP Source]
 ##### <p align="right"><span class="gold">Source for Intel® FSP  Producer Code</span></p>
@@ -665,7 +671,7 @@ Talking point – anyone would could be producer.  IBV could.  Just worry about 
 
 
 
----?image=/assets/images/slides/Slide32.JPG
+---?image=/assets/images/slides/Slide37_1.JPG
 <!-- .slide: data-transition="none" -->
 
 @title[UEFI Spec pic]    
@@ -694,12 +700,7 @@ UEFI Forum Education Link </a></span></p>
 
 Note:
 
----
-@title[UEFI & EDK II Timeline]    
-<p align="center"<span style="color:white; font-size:0.7em"> UEFI Specification & EDK II Reference Implementation Timeline  </span></p>
-<p align="center"<span style="color:white; font-size:0.4em"> <a href="http://www.uefi.org/">UEFI Specification</a> -top &nbsp;&nbsp;&nbsp;&nbsp; & &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.tiancore.org/">EDK II Open Source</a> -bottom </span></p>
 
-![Timeline](/assets/images/slides/bg30.jpg) 
 
 ---  
 @title[UDK2018 Key Features]   
@@ -707,9 +708,9 @@ Note:
 <p align="center"><span style="color:#e49436; font-size: 1.0em"> UDK2018: Key Features - Q2 2018</span> </p>
 <p align="Left"><span style="color:#e49436; font-size:0.8em"> UEFI Development Kit (UDK) releases are stable, validated snapshots of EDK II  </span> </p>
 <div class="left">
-     <ul>
+     <ul style="list-style-type:disc; line-height:0.8;">
         <li><span style="font-size:0.7em">Industry Standards & Public Specifications</span> </li>
-        <ul>
+        <ul style="list-style-type:disc; line-height:0.8;">
           <li><span style="font-size:0.7em">UEFI 2.7</span></li>
           <li><span style="font-size:0.7em">UEFI PI 1.6</span></li>
           <li><span style="font-size:0.7em">ACPI 6.2</span></li>
@@ -720,7 +721,7 @@ Note:
     </ul>
 </div>
 <div class="right">
-    <ul>
+    <ul style="list-style-type:disc; line-height:0.8;">
         <li><span style="font-size:0.7em">Compilers / Tools</span></li>
         <li><span style="font-size:0.7em">Microsoft Visual Studio 2017 tool chain</span></li>
         <li><span style="font-size:0.7em">Hash-based incremental build</span></li>
@@ -729,6 +730,60 @@ Note:
 	<a href="https://github.com/tianocore/tianocore.github.io/wiki/UDK2018#edk-ii-specification-for-udk2018">TianoCore Wiki UDK2018 </a></span></li>
     </ul>
 </div>
+
+---  
+@title[EDK II Community Development]   
+<p align="center"><span class="gold"   >@size[1.1em](<b>EDK II - Open Source &nbsp;&nbsp;&nbsp; </b>)</span></p>
+<br>
+
+<span style="font-size:01.0em">@color[#e49436](Community Development)</span>
+<div class="left1">
+     <ul style="list-style-type:disc; line-height:0.8;">
+        <li><span style="font-size:0.8em">Stable Tag Releases- cycle of releasing stable versions of  EDK II Firmware </span> </li>
+        <li><span style="font-size:0.8em">Adding UEFI Spec updates and new key features  and bug fixes</span> </li>
+        <li><span style="font-size:0.8em">Three phases of development</span> </li>
+        <ul style="list-style-type:none; line-height:0.65;">
+           <li><span style="font-size:0.65em">- Development phase</span> </li>
+           <li><span style="font-size:0.65em">- Soft Feature Freeze</span> </li>
+           <li><span style="font-size:0.65em">- Hard Feature Freeze</span> </li>
+        </ul>
+     </ul>
+</div>
+<div class="right1">
+<span style="font-size:0.7em">&nbsp;</span>
+</div>
+
+@snap[north-east span-30 ]
+<br>
+<br>
+![Logo](/assets/images/TianocoreLogo.png )
+@snapend
+
+@snap[north-east span-35 ]
+<br><br><br><br>
+![Community](/assets/images/Community.png )
+@snapend
+
+@snap[south-east span-45 ]
+<p style="line-height:70%" align="left"><span style="font-size:0.7em">
+Tag: edk2-stable201903 Features:<br>
+&nbsp;&nbsp;<a href="https://github.com/tianocore/edk2/releases">	edk2 releases Stable tag</a><br>
+<br>
+</span></p>
+@snapend
+
+Note:
+
+Clip art CC - https://carolahand.files.wordpress.com/2015/06/community-clipart-dt6xbagt9.png 
+
+Stable Tag releases are validated snapshots of EDK II adding updates and new key features  and bug fixes
+
+
+There is a development phase, 
+Soft Feature Freeze
+The soft feature freeze is the beginning of the stabilization phase of edk2's development process. By the date of the soft feature freeze, developers must have sent their patches to the mailing list andreceived positive maintainer reviews (Reviewed-by or Acked-by tags). This means that features, and in particular non-trivial ones, must have been accepted by maintainers before the soft freeze date.
+Between the soft feature freeze and the hard feature freeze, previously reviewed and unit-tested features may be applied (or merged) to the master branch, for integration testing. Feature addition or enablement patches posted or reviewed after the soft feature freeze will be delayed until after the upcoming stable tag.
+
 
 ---  
 @title[Summary]
@@ -745,6 +800,24 @@ Note:
 @title[Questions]
 <br>
 ![Questions](/assets/images/questions.JPG =10x) 
+
+---
+@title[return to main]
+<p align="center"><span class="gold"   >@size[1.2em](<b>Return to Main Training Page</b>)</span></p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p align="center"><span style="font-size:0.9em">Return to Training Table of contents for next presentation <a href="https://github.com/tianocore-training/Tianocore_Training_Contents/wiki#schedule--outline">link</a></span></p>
+
+@snap[north span-30 ]
+<br>
+<br>
+<br>
+<a href="https://github.com/tianocore-training/Tianocore_Training_Contents/wiki#schedule--outline">
+![trainingLogo](/assets/images/returnTrainingLogo.png)</a>
+@snapend
 
 
 ---?image=assets/images/gitpitch-audience.jpg
@@ -786,6 +859,12 @@ Wrapper is responsible for communicating with Braswell FSP APIs in SEC, PEI, and
 BDS phase
 https://github.com/mangguo321/Braswell/raw/master/Documents/Open_Braswell_Platform_Designing_Porting_Guide.pdf 
 
+---
+@title[UEFI & EDK II Timeline]    
+<p align="center"<span style="color:white; font-size:0.7em"> UEFI Specification & EDK II Reference Implementation Timeline  </span></p>
+<p align="center"<span style="color:white; font-size:0.4em"> <a href="http://www.uefi.org/">UEFI Specification</a> -top &nbsp;&nbsp;&nbsp;&nbsp; & &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.tiancore.org/">EDK II Open Source</a> -bottom </span></p>
+
+![Timeline](/assets/images/slides/bg30.jpg) 
 ---?image=assets/images/gitpitch-audience.jpg
 @title[Logo Slide]
 <BR><BR><BR>
@@ -820,7 +899,7 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWIS
 ARISING IN ANY WAY OUT OF THE USE OF THIS DOCUMENTATION, EVEN IF ADVISED OF THE POSSIBILITY 
 OF SUCH DAMAGE.
 
-Copyright (c) 2018, Intel Corporation. All rights reserved.
+Copyright (c) 2019, Intel Corporation. All rights reserved.
 **/
 
 ```
