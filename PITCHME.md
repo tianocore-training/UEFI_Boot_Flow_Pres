@@ -222,6 +222,19 @@ Serving as the root of trust in the system
 Initial code that takes control of the system
 May choose to authenticate the PEI Foundation 
 
++++?image=/assets/images/slides/Slide9_1.JPG
+<!-- .slide: data-background-transition="none" -->
+<!-- .slide: data-transition="none" -->
+@title[SEC - Pre-Memory Init ]
+<p align="right"><span class="gold" >@size[1.1em](<b>Pre-Memory Initialization </b>)</span></p>
+<p align="left">
+<span style="font-size:0.8em" >Address Space</span></p>
+
+Note:
+- Until memory is initialized the address space is the same mapped to th 4GB address space in 32bit flat mode
+- No-evection mode or Cache as Ram (CAR) is used for the Temporary memory
+
+
 
 +++
 <!-- .slide: data-background-transition="none" -->
