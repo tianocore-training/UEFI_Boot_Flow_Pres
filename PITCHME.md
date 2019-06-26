@@ -760,7 +760,7 @@ Intel®  FSP "Produced" to <br> "Consuming" Intel® Architecture Firmware </span
 Note:
 Applying “Produced” Intel® Firmware Support Package (FSP) to “Consuming” IA firmware <Br>  
 
----?image=/assets/images/slides/Slide27.JPG
+---?image=/assets/images/slides/Slide36_1.JPG
 <!-- .slide: data-transition="none" -->
 
 @title[Intel FSP from UEFI Boot Flow]
@@ -771,7 +771,7 @@ Note:
 Platform Initialization (PI) & UEFI w/ EDK <Br>
 - Intel FSP boot flow   
  
-+++?image=/assets/images/slides/Slide28.JPG
++++?image=/assets/images/slides/Slide37_2.JPG
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
 @title[Intel FSP from UEFI Boot Flow 2]
@@ -781,6 +781,13 @@ Platform Initialization (PI) & UEFI w/ EDK <Br>
 Note:
 Platform Initialization (PI) & UEFI w/ EDK <Br>
 - Intel FSP boot flow    
+
+The normal boot flow of FSP2.0 is shown on this slide. In normal boot, the SecPlatformLib (sample at https://github.com/tianocore/edk2/tree/master/IntelFsp2WrapperPkg/Library/SecFspWrapperPlatformSecLibSample ), which is linked by the SecCore (https://github.com/tianocore/edk2/tree/master/UefiCpuPkg/SecCore ), calls first FSP API – TempRamInitApi, and then transfers the control to the PeiCore. SecPlatformLib also registers SecTempRamDonePpi (https://github.com/tianocore/edk2/blob/master/IntelFsp2WrapperPkg/Library/SecFspWrapperPlatformSecLibSample/SecTempRamDone.c ) for TempRamExitApi. 
+One platform PEIM is responsible to detect the current boot mode and finds some variables (like capsule variable) to finalize the boot mode selection. The FspmWrapperPeim (https://github.com/tianocore/edk2/tree/master/IntelFsp2WrapperPkg/FspmWrapperPeim ) has a dependency on MasterBootModePpi, so after the boot mode is determined, the FspmWrapperPeim is invoked. FspmWrapperPeim gets the UPD data, allocates buffer for UPD override data, then calls UpdateFspmUpdData() to update the UPD data according to platform policy (sample at https://github.com/tianocore/edk2/tree/master/IntelFsp2WrapperPkg/Library/BaseFspWrapperPlatformLibSample ). Then FspmWrapperPeim calls second FSP API – FspMemoryInitApi. Once this API returns, FspmWrapperPeim calls PostFspmHobProcess() to process the initial FSP HOB. (sample at https://github.com/tianocore/edk2/tree/master/IntelFsp2WrapperPkg/Library/PeiFspWrapperHobProcessLibSample ). FspWrapperHobProcessLib parses resource HOB and installs PEI memory to PEI core. 
+Once the PeiCore gets permanent memory, PeiCore does TemporaryRam migration and calls PeiTemporaryRamDonePpi, where TempRamExitApi is called. After that, PeiCore installs PeiMemoryDiscovered. Then the dependency of FspsWrapperPeim (https://github.com/tianocore/edk2/tree/master/IntelFsp2WrapperPkg/FspsWrapperPeim ) is satisfied. FspsWrapperPeim gets the UPD data, allocates buffer for UPD override data, then calls UpdateFspsUpdData() to update the UPD data according to platform policy. (sample at https://github.com/tianocore/edk2/tree/master/IntelFsp2WrapperPkg/Library/BaseFspWrapperPlatformLibSample ). Then FspsWrapperPeim calls FspSiliconInitApi to finish final silicon initialization. Once this API returns, FspsWrapperPeim calls PostFspsHobProcess() to process FSP HOB after silicon initialization. (sample at https://github.com/tianocore/edk2/tree/master/IntelFsp2WrapperPkg/Library/PeiFspWrapperHobProcessLibSample ). Typically, there will be more data in the FSP HOB at this time. Most work in PostFspsHobProcess() is to migrate the HOB data from FSP to FspWrapper. 
+Then the PeiCore will continue dispatching the final PEIMs and jump into the DxeCore. Then the DxeCore launches FspWrapperNotifyDxe (https://github.com/tianocore/edk2/tree/master/IntelFsp2WrapperPkg/FspWrapperNotifyDxe ). FspWrapperNotifyDxe registers a callback function for the last FSP API – FspNotifyApi, for AfterPciEnumeration, ReadyToBoot, and EndOfFirmware. 
+
+
 
 
 ---
@@ -992,12 +999,10 @@ Between the soft feature freeze and the hard feature freeze, previously reviewe
 <br><br><br><br><br>
 ### <p align="center"><span class="gold"   >Backup </span></p>
 
----
+---?image=/assets/images/slides/Slide50_1.JPG
 @title[FSP detail 1]
-<p align="center"><span style="font-size:0.8em"><b>Intel® FSP V2.0 Boot Flow</b></span> </p>
-![FSP-Detail-1](/assets/images/slides/bg48_1.jpg =10x) 
-<p style="line-height:50%"><span style="font-size:0.5em"> Whitpaper:Using Intel® FSP with EDK II: <a href="https://firmware.intel.com/sites/default/files/A_Tour_Beyond_BIOS_Using_the_Intel_Firmware_Support_Package_with_the_EFI_Developer_Kit_II_(FSP2.0).pdf "> PDF</a>
-<br></span> <span style="font-size:0.3em"> Intel® Firmware Support Package (Intel® FSP)   </span> </p>
+<p align="right" style="line-height:50%"><span style="font-size:0.8em"><b>Intel® FSP V2.0 Boot Flow</b><br> </span><span style="font-size:0.5em"> Using Intel® FSP w/ EDK II: <a href="https://firmware.intel.com/sites/default/files/A_Tour_Beyond_BIOS_Using_the_Intel_Firmware_Support_Package_with_the_EFI_Developer_Kit_II_(FSP2.0).pdf "> PDF</a>
+<br></span> </p>
 	
 Note:
 The Intel® Firmware Support Package (Intel® FSP) [FSP] provides key programming information for initializing Intel silicon and can be easily integrated into a firmware boot environment of the developer’s choice. 
