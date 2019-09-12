@@ -712,18 +712,21 @@ Section on Intel FSP
 @title[Intel FSP Description]
 <br>
 #### <span class="gold">Intel® FSP  -  Components </span>
-- CPU, memory controller, and chipset initialization functions as a binary package
-- Provides silicon initialization ingredients
-- Plugs into existing firmware frameworks
-- Integration guide, includes API documentation
+<ul style="list-style-type:disc; line-height:0.7;">
+ <li><span style="font-size:0.8em" >CPU, memory controller, and chipset initialization functions as a binary package   </span></li>
+ <li><span style="font-size:0.8em" >Provides silicon initialization ingredients   </span></li>
+ <li><span style="font-size:0.8em" >Plugs into existing firmware frameworks   </span></li>
+ <li><span style="font-size:0.8em" >Integration guide, includes API documentation   </span></li>
+</ul>
 
-<p align="left" style="margin-top: -3px; margin-bottom: -3px"><span style="color:white; font-size:0.6em"> 
-<br>
-<BR>
-<p style="line-height:70%"><span style="font-size:0.8em" >Intel FSP is currently available for the many Intel hardware-producing divisions &nbsp;&nbsp;&nbsp;
-See: <a href="https://firmware.intel.com/learn/fsp/about-intel-fsp"> About Intel FSP</a> </span></p>
+<p style="line-height:70%"><span style="font-size:0.7em" >Intel FSP is currently available for the many Intel hardware-producing divisions &nbsp;&nbsp;&nbsp;
+See: <a href="https://software.intel.com/en-us/articles/intel-firmware-support-package"> About Intel FSP</a> </span></p>
 <p style="line-height:70%"><span style="font-size:0.8em" >White Paper Example: <a href="https://github.com/mangguo321/Braswell/blob/master/Documents/Open_Braswell_Platform_Designing_Porting_Guide.pdf">
 Open Braswell - Design and Porting Guide</a></span></span></p>
+
+@snap[south span-100 fragment]
+@box[bg-purple-pp text-white rounded my-box-pad2  ](<p style="line-height:70%" ><span style="font-size:0.9em; font-weight: bold;" > Intel® FSP is <b>NOT</b> a stand-alone boot-loader<br>&nbsp;</span></p>)
+@snapend
 
 Note:
 The Intel® Firmware Support Package (Intel® FSP) is a royalty-free option for initializing Intel silicon, designed for integration into a boot loader of the developer's choice. It is easy to adopt, is scalable to design, reduces time to market, and is economical to build. Intel FSP provides a binary package to initialize the processor, memory controller, and Intel® chipset initialization functions.
@@ -738,6 +741,7 @@ Intel FSP is designed for integration into a variety of boot loaders, including 
 
 Note:
 Intel FSP 1<Br>
+
 +++?image=/assets/images/slides/Slide25.JPG
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
@@ -760,23 +764,35 @@ Intel®  FSP "Produced" to <br> "Consuming" Intel® Architecture Firmware </span
 Note:
 Applying “Produced” Intel® Firmware Support Package (FSP) to “Consuming” IA firmware <Br>  
 
----?image=/assets/images/slides/Slide36_1.JPG
-<!-- .slide: data-transition="none" -->
 
+
+---
 @title[Intel FSP from UEFI Boot Flow]
 #### <p align="center"><span class="gold">UEFI - PI & EDK II Boot Flow </span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<b>FSP</b> </span></p>
 
+@snap[south-west span-100]
+![boot-flow](/assets/images/boot-flow.png)
+@snapend
+
+
+@snap[south-west span-45 fragment]
+![fsp-bin](/assets/images/FSP_FD.png)
+<br>
+<br>
+<br>
+<br>
+@snapend
 
 Note:
 Platform Initialization (PI) & UEFI w/ EDK <Br>
 - Intel FSP boot flow   
  
-+++?image=/assets/images/slides/Slide37_2.JPG
+---?image=/assets/images/slides/Slide37.JPG
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
 @title[Intel FSP from UEFI Boot Flow 2]
 
-#### <p align="center"><span class="gold">UEFI - PI & EDK II Boot Flow </span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<b>FSP</b> </span></p>
+<p align="center"><span class="gold">Boot Flow with UEFI & Intel® FSP</span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
 
 Note:
 Platform Initialization (PI) & UEFI w/ EDK <Br>
@@ -795,15 +811,15 @@ Then the PeiCore will continue dispatching the final PEIMs and jump into the Dxe
 ##### <p align="center"<span class="gold">Intel® FSP  - Producer </span></p>
 <ul style="line-height:0.8;">
   <li><span style="font-size:0.8em" > Examples of binary instances on   <a href="http://www.intel.com/fsp">http://www.intel.com/fsp </a> with integration guides</span></li>
-  <ul style="list-style-type:disc" style="line-height:0.8;" >
-    <li><span style="font-size:0.67em" >This includes hardware initialization code that is EDK II based PEI Modules (PEIM’s)</span></li>
+  <ul style="list-style-type:none" style="line-height:0.7;" >
+    <li><span style="font-size:0.67em" >&bull; This includes hardware initialization code that is EDK II based PEI <br>&nbsp;&nbsp;&nbsp;&nbsp;Modules (PEIM’s)</span></li>
   </ul>
   <li><span style="font-size:0.8em" >Modules are encapsulated as a UEFI PI firmware volume w/ extra header</span></li>
   <li><span style="font-size:0.8em" >Configure w/Vital Product Data (VPD)-style Platform Configuration Data (PCD) externalized from the modules</span></li>
   <li><span style="font-size:0.8em" >Resultant output state reported via UEFI Platform Initialization (PI) Hand Off Block (HOB)</span></li>
 </ul>
 <p style="line-height:50%"><span style="font-size:0.5em" > <a href="http://www.intel.com/content/dam/www/public/us/en/documents/technical-specifications/fsp-architecture-spec-v2.pdf"> Intel® Firmware Support Package (Intel® FSP) External Architecture Specification (EAS) v2.0 PDF </a><BR>
- Resource: <a href="https://firmware.intel.com/blog/open-source-platforms-edkii-using-intel-fsp">https://firmware.intel.com/blog/open-source-platforms-edkii-using-intel-fsp  </a> </span> </p>
+</span> </p>
 
 Note:
 
@@ -812,19 +828,19 @@ Note:
 ##### <p align="right"><span class="gold">Source for Intel® FSP  Producer Code</span></p>
 
 <ul style="line-height:0.8;">
-  <li><span style="font-size:0.8em" >CPU and chipset-specific code for PEIM’s inside of the Intel FSP can be open or closed, added to… </span></li><br>
+  <li><span style="font-size:0.8em" >CPU and chipset-specific code for PEIM’s inside of the Intel FSP can be open or closed, code at <a href="https://github.com/IntelFsp/FSP"> Intel FSP-repo </a></span></li><br>
   <li><span style="font-size:0.8em" >PEI core and infrastructure code at <a href="https://github.com/tianocore/edk2"> tianocore.org/edk2 </a></span></li>
   <ul style="list-style-type:disc" style="line-height:0.8;" >
-     <li><span style="font-size:0.7em" ><a href="https://github.com/tianocore/edk2/tree/master/MdePkg"> `/MdePkg` </a></span></li>
-     <li><span style="font-size:0.7em" ><a href="https://github.com/tianocore/edk2/tree/master/MdeModulePkg"> `/MdeModulePkg` </a></span></li><br>
+     <li><span style="font-size:0.7em" ><a href="https://github.com/tianocore/edk2/tree/master/MdePkg"> /MdePkg </a></span></li>
+     <li><span style="font-size:0.7em" ><a href="https://github.com/tianocore/edk2/tree/master/MdeModulePkg"> /MdeModulePkg </a></span></li><br>
   </ul>
   <li><span style="font-size:0.8em" >And the code to create the Intel FSP interfaces can be found at</span></li> 
    <ul style="list-style-type:disc" style="line-height:0.8;" >
-     <li><span style="font-size:0.7em" ><a href="https://github.com/tianocore/edk2/tree/master/IntelFsp2Pkg"> `/IntelFsp2Pkg` </a></span></li>
+     <li><span style="font-size:0.7em" ><a href="https://github.com/tianocore/edk2/tree/master/IntelFsp2Pkg"> /IntelFsp2Pkg </a> and Wrapper at: <a href="https://github.com/tianocore/edk2/tree/master/IntelFsp2WrapperPkg">/IntelFsp2WrapperPkg </a></span></li>
    </li>
 <br>
 <br>
-@box[bg-purple text-white rounded fragment](Intel FSP can encapsulate IP protected initialization code PRODUCED by Intel business units) -
+@box[bg-purple-pp text-white rounded fragment](Intel FSP can encapsulate IP protected initialization code PRODUCED by Intel business units) -
 
 Note:
 
@@ -840,7 +856,7 @@ Talking point – anyone would could be producer.  IBV could.  Just worry about 
 
 
 
----?image=/assets/images/slides/Slide37_1.JPG
+---?image=/assets/images/slides/Slide41.JPG
 <!-- .slide: data-transition="none" -->
 
 @title[UEFI Spec pic]    
@@ -873,16 +889,15 @@ Note:
 
 ---  
 @title[UDK2018 Key Features]   
-<br> 
-<p align="center"><span style="color:#e49436; font-size: 1.0em"> UDK2018: Key Features - Q2 2018</span> </p>
+<p align="right"><span style="color:#e49436; font-size: 1.0em"> UDK2018: Key Features - Q2 2018</span> </p>
 <p align="Left"><span style="color:#e49436; font-size:0.8em"> UEFI Development Kit (UDK) releases are stable, validated snapshots of EDK II  </span> </p>
 <div class="left">
-     <ul style="list-style-type:disc; line-height:0.8;">
+     <ul style="list-style-type:disc; line-height:0.7;">
         <li><span style="font-size:0.7em">Industry Standards & Public Specifications</span> </li>
-        <ul style="list-style-type:disc; line-height:0.8;">
-          <li><span style="font-size:0.7em">UEFI 2.7</span></li>
-          <li><span style="font-size:0.7em">UEFI PI 1.6</span></li>
-          <li><span style="font-size:0.7em">ACPI 6.2</span></li>
+        <ul style="list-style-type:none; line-height:0.65;">
+          <li><span style="font-size:0.67em">&bull; UEFI 2.7</span></li>
+          <li><span style="font-size:0.67em">&bull; UEFI PI 1.6</span></li>
+          <li><span style="font-size:0.67em">&bull; ACPI 6.2</span></li>
         </ul>
         <li><span style="font-size:0.7em">Centralized Config Management </span></li>
         <li><span style="font-size:0.7em">IOMMU-based DMA Protection</span></li>
@@ -890,7 +905,7 @@ Note:
     </ul>
 </div>
 <div class="right">
-    <ul style="list-style-type:disc; line-height:0.8;">
+    <ul style="list-style-type:disc; line-height:0.7;">
         <li><span style="font-size:0.7em">Compilers / Tools</span></li>
         <li><span style="font-size:0.7em">Microsoft Visual Studio 2017 tool chain</span></li>
         <li><span style="font-size:0.7em">Hash-based incremental build</span></li>
@@ -900,10 +915,17 @@ Note:
     </ul>
 </div>
 
+@snap[south-west span-100 ]
+<p style="line-height:67%" align="left"><span style="font-size:0.67em">
+Include Helper .chm files for different Packages: <a href="https://github.com/tianocore/tianocore.github.io/wiki/UDK2018#documentation"> UDK2018 documentation</a>
+<br>
+</span></p>
+@snapend
+
+
 ---  
 @title[EDK II Community Development]   
 <p align="center"><span class="gold"   >@size[1.1em](<b>EDK II - Open Source &nbsp;&nbsp;&nbsp; </b>)</span></p>
-<br>
 
 <span style="font-size:01.0em">@color[#e49436](Community Development)</span>
 <div class="left1">
@@ -933,9 +955,18 @@ Note:
 ![Community](/assets/images/Community.png )
 @snapend
 
+
+@snap[south-west span-45 ]
+<p style="line-height:70%" align="left"><span style="font-size:0.7em">
+More information on Stable Tag Planning: <a href="https://github.com/tianocore/tianocore.github.io/wiki/EDK-II-Release-Planning"> TianoCore Wiki</a>
+<br>
+</span></p>
+<br>
+@snapend
+
 @snap[south-east span-45 ]
 <p style="line-height:70%" align="left"><span style="font-size:0.7em">
-Tag: edk2-stable201903 Features:<br>
+Tag: edk2-stable201908 Features:<br>
 &nbsp;&nbsp;<a href="https://github.com/tianocore/edk2/releases">	edk2 releases Stable tag</a><br>
 <br>
 </span></p>
@@ -952,6 +983,17 @@ There is a development phase,
 Soft Feature Freeze
 The soft feature freeze is the beginning of the stabilization phase of edk2's development process. By the date of the soft feature freeze, developers must have sent their patches to the mailing list andreceived positive maintainer reviews (Reviewed-by or Acked-by tags). This means that features, and in particular non-trivial ones, must have been accepted by maintainers before the soft freeze date.
 Between the soft feature freeze and the hard feature freeze, previously reviewed and unit-tested features may be applied (or merged) to the master branch, for integration testing. Feature addition or enablement patches posted or reviewed after the soft feature freeze will be delayed until after the upcoming stable tag.
+
+
+---?image=/assets/images/slides/Slide45.JPG
+@title[Report a bug on Bugzilla]
+<p align="right"><span class="gold" >@size[1.1em](<b>Report a bug on Bugzilla&nbsp; &nbsp; &nbsp; &nbsp;  </b>)</span>
+<span style="font-size:0.75em;" >  </span></p>
+<ul style="list-style-type:none; line-height:0.8;">
+  <li><span style="font-size:0.75em">Create a user account  https://bugzilla.tianocore.org/  </span></li>
+  <li><span style="font-size:0.75em">Search if bug "already" reported  </span></li>
+  <li><span style="font-size:0.75em">File <a href="https://bugzilla.tianocore.org/enter_bug.cgi">New Report</a> – Pick a product – fill out form for the bug  </span></li>
+</ul>
 
 
 ---  
@@ -999,9 +1041,36 @@ Between the soft feature freeze and the hard feature freeze, previously reviewe
 <br><br><br><br><br>
 ### <p align="center"><span class="gold"   >Backup </span></p>
 
----?image=/assets/images/slides/Slide50_1.JPG
+
+---
+@title[FSP detail 0]
+<p align="right"><span class="gold" >@size[1.1em](<b>What is Intel® Firmware Support Package?  </b>)</span><span style="font-size:0.75em;" >  </span></p>
+<ul style="list-style-type:disc; line-height:0.7;">
+  <li><span style="font-size:0.7em">Intel® Firmware Support Package (Intel® FSP) includes: </span></li>
+  <ul style="list-style-type:disc; line-height:0.6;">
+     <li><span style="font-size:0.57em">A binary file </span></li>
+     <li><span style="font-size:0.57em">An integration guide </span></li>
+     <li><span style="font-size:0.57em">A rebasing tool </span></li>
+     <li><span style="font-size:0.57em">An IDE configuration tool / Boot Setting File (BSF) </span></li>
+ </ul> 
+  <li><span style="font-size:0.7em">Provide silicon initialization code: </span></li>
+  <ul style="list-style-type:disc; line-height:0.6;">
+     <li><span style="font-size:0.57em">Initializes processor core, chipset as explained in BIOS Writers’ Guid </span></li>
+     <li><span style="font-size:0.57em">Is relocatable in ROM </span></li>
+     <li><span style="font-size:0.57em">Can be configured for platform customization </span></li>
+  </ul> 
+  <li><span style="font-size:0.7em">Boot loader agnostic and can be easily integrated with many options: </span></li>
+  <ul style="list-style-type:disc; line-height:0.6;">
+     <li><span style="font-size:0.57em">Open source boot loaders: UEFI –EDK II, Coreboot, U-boot, etc. </span></li>
+     <li><span style="font-size:0.57em">RTOS </span></li>
+     <li><span style="font-size:0.57em">Others </span></li>
+  </ul> 
+</ul>
+
+
+---?image=/assets/images/slides/Slide52.JPG
 @title[FSP detail 1]
-<p align="right" style="line-height:50%"><span style="font-size:0.8em"><b>Intel® FSP V2.0 Boot Flow</b><br> </span><span style="font-size:0.5em"> Using Intel® FSP w/ EDK II: <a href="https://firmware.intel.com/sites/default/files/A_Tour_Beyond_BIOS_Using_the_Intel_Firmware_Support_Package_with_the_EFI_Developer_Kit_II_(FSP2.0).pdf "> PDF</a>
+<p align="right" style="line-height:50%"><span style="font-size:0.8em"><b>Intel® FSP V2.0 Boot Flow</b><br> </span><span style="font-size:0.5em"> Using Intel® FSP w/ EDK II: <a href="https://software.intel.com/sites/default/files/managed/d9/57/a-tour-beyond-bios-using-the-intel-firmware-support-package-with-the-efi-developer-kit-ii-fsp2.0.pdf"> PDF</a>
 <br></span> </p>
 	
 Note:
@@ -1010,7 +1079,10 @@ Different Intel hardware devices may have different Intel FSP binary instances, 
 Despite the variability of the FSP binaries, the FSP API caller (aka FSP consumer) could be a generic module to invoke the 5 APIs defined in FSP EAS (External Architecture Specification) to finish silicon initialization. [FSP EAS] 
 The flow below describes the FSP, with the FSP binary from the “FSP Producer” in green and the platform code that integrates the binary, or the “FSP Consumer”, in blue. 
 
-Source https://firmware.intel.com/sites/default/files/A_Tour_Beyond_BIOS_Using_the_Intel_Firmware_Support_Package_with_the_EFI_Developer_Kit_II_%28FSP2.0%29.pdf 
+Source https://software.intel.com/sites/default/files/managed/d9/57/a-tour-beyond-bios-using-the-intel-firmware-support-package-with-the-efi-developer-kit-ii-fsp2.0.pdf
+
+ moved from:
+ https://firmware.intel.com/sites/default/files/A_Tour_Beyond_BIOS_Using_the_Intel_Firmware_Support_Package_with_the_EFI_Developer_Kit_II_%28FSP2.0%29.pdf 
 
 ---
 @title[FSP detail 2]
@@ -1025,6 +1097,31 @@ Open Braswell EDKII FSP
 Wrapper is responsible for communicating with Braswell FSP APIs in SEC, PEI, and
 BDS phase
 https://github.com/mangguo321/Braswell/raw/master/Documents/Open_Braswell_Platform_Designing_Porting_Guide.pdf 
+
+
+---
+@title[FSP detail 3]
+<p align="right"><span class="gold" >@size[1.1em](<b>Intel®  FSP Integration  </b>)</span><span style="font-size:0.75em;" >  </span></p>
+<ul style="list-style-type:none; line-height:0.7;">
+  <li><span style="font-size:0.7em"><b>Placement:  </b> </span></li>
+  <ul style="list-style-type:disc; line-height:0.6;">
+     <li><span style="font-size:0.57em">Once the Intel FSP binary is ready for integration, the bootloader build process needs to configured to place the Intel FSP binary at the proper base address. </span></li>
+ </ul> 
+  <li><span style="font-size:0.7em"><b>Rebase:  </b> </span></li>
+  <ul style="list-style-type:disc; line-height:0.6;">
+     <li><span style="font-size:0.57em">The Intel FSP is not Position Independent Code (PIC) and the whole Intel FAP has to be rebased with the Binary Configuration Tool (BCT) if it is placed at a location that is different form the default base address of the Intel FSP. </span></li>
+ </ul> 
+  <li><span style="font-size:0.7em"><b>Interface:  </b> </span></li>
+  <ul style="list-style-type:disc; line-height:0.6;">
+     <li><span style="font-size:0.57em">The bootloader needs to add code to setup the Operating environment for the Intel FSP, call Intel FSP with the correct parameters and parse the Intel FSP output to retrieve the necessary information returned by the Intel FSP. </span></li>
+ </ul> 
+  <li><span style="font-size:0.7em"><b>Customization:  </b> </span></li>
+  <ul style="list-style-type:disc; line-height:0.6;">
+     <li><span style="font-size:0.57em">The static Intel FSP configuration parameters/features are part of the Intel FSP binary and can be customized with BCT  </span></li>
+ </ul> 
+
+</ul>
+
 
 ---
 @title[UEFI & EDK II Timeline]    
