@@ -804,6 +804,41 @@ Once the PeiCore gets permanent memory, PeiCore does TemporaryRam migration and 
 Then the PeiCore will continue dispatching the final PEIMs and jump into the DxeCore. Then the DxeCore launches FspWrapperNotifyDxe (https://github.com/tianocore/edk2/tree/master/IntelFsp2WrapperPkg/FspWrapperNotifyDxe ). FspWrapperNotifyDxe registers a callback function for the last FSP API – FspNotifyApi, for AfterPciEnumeration, ReadyToBoot, and EndOfFirmware. 
 
 
++++?image=/assets/images/slides/Slide38_1.JPG
+<!-- .slide: data-background-transition="none" -->
+<!-- .slide: data-transition="none" -->
+
+<p align="center"><span class="gold">MinPlatform @color[yellow](+)Intel<sup>®</sup> FSP Boot Flow </span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+
+Note:
+
+Firmware Volumes follow the boot flow stages
+
+Stage 1
+- enable debug
+
+Stage 2
+- memory initialization
+
+Stage 3
+- boot to UEFI shell only
+
+Stage 4
+- boot to OS
+
+Stage 5
+- boot to OS w/ security enabled
+
+Stage 6
+- Advanced Feature Selection
+
+Stage 7
+- Performance Optimizations
+
+
+
+
+
 
 
 ---
