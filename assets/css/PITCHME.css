@@ -416,6 +416,7 @@ table#recTable-1{width:100%; border:1px solid gray;}
 .bg-u-term  { background: #300A24!important; }
 .bg-ubuntu  { background: #64205d!important; }
 
+.bg-grey-85-trans  { background:rgba(217, 217, 217, 0.8) !important; }
 
 .my-box-pad #boxed-text{ 
   padding-top: 0.05em;
