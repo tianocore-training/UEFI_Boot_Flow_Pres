@@ -957,18 +957,18 @@ Stage 7
   <li><span style="font-size:0.8em" >Resultant output state reported via UEFI Platform Initialization (PI) Hand Off Block (HOB)</span></li>
 </ul>
 <p style="line-height:50%"><span style="font-size:0.5em" ><a href="https://cdrdv2.intel.com/v1/dl/getContent/611786"> Intel® FSP External Architecture Specification (EAS) v2.1 </a></span><br>
-<span style="font-size:0.5em" >Resource: <a href="https://software.intel.com/content/www/us/en/develop/articles/intel-firmware-support-package.html">Intel Firmware Support Package</a></span></p>
+<span style="font-size:0.5em" >Resource: <a href="https://software.intel.com/content/www/us/en/develop/articles/intel-firmware-support-package.html">Intel® Firmware Support Package (FSP)</a></span></p>
 
 Note:
 
 
 ---
 @title[Intel FSP Source]
-##### <p align="right"><span class="gold"   >Source for Intel® FSP  Producer Code</span></p>
+##### <p align="right"><span class="gold"   >Source for Intel® FSP Producer Code</span></p>
 
 <ul style="line-height:0.8;">
-  <li><span style="font-size:0.8em" >CPU and chipset-specific code for PEIMs inside of the Intel FSP can be open or closed, code at <a href="https://github.com/IntelFsp/FSP"> Intel® Firmware Support Package (Intel® FSP) Binaries </a></span></li><br>
-  <li><span style="font-size:0.8em" >PEI core and infrastructure code at <a href="https://github.com/tianocore/edk2"> tianocore.org/edk2 </a></span></li>
+  <li><span style="font-size:0.8em" >CPU and chipset-specific code for PEIMs inside of the Intel FSP can be open or closed, code at the <a href="https://github.com/IntelFsp/FSP">Intel® FSP Binaries </a> repository.</span></li><br>
+  <li><span style="font-size:0.8em" >PEI core and infrastructure code at the <a href="https://github.com/tianocore/edk2">EDK II Project</a> repo.</span></li>
   <ul style="list-style-type:disc" style="line-height:0.8;" >
      <li><span style="font-size:0.7em" ><a href="https://github.com/tianocore/edk2/tree/master/MdePkg"> /MdePkg </a></span></li>
      <li><span style="font-size:0.7em" ><a href="https://github.com/tianocore/edk2/tree/master/MdeModulePkg"> /MdeModulePkg </a></span></li><br>
