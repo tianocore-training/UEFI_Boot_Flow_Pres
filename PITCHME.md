@@ -40,7 +40,6 @@ Note:
   ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-
 ---  
 @title[Lesson Objective]
 ### <p align="center"<span class="gold"   >Lesson Objective </span></p>
@@ -49,7 +48,7 @@ Note:
 -->
  @fa[certificate gp-bullet-green]<span style="font-size:0.9em">&nbsp;&nbsp;Where is the System Firmware </span><br><br>
  @fa[certificate gp-bullet-cyan]<span style="font-size:0.9em">&nbsp;&nbsp;Review UEFI Platform Initialization Boot Flow Process</span><br><br>
- @fa[certificate gp-bullet-yellow]<span style="font-size:0.9em">&nbsp;&nbsp;What about Management Mode (Aka SMM)</span> <br><br>
+ @fa[certificate gp-bullet-yellow]<span style="font-size:0.9em">&nbsp;&nbsp;What about Management Mode (formerly known as SMM)</span> <br><br>
  @fa[certificate gp-bullet-magenta]<span style="font-size:0.9em">&nbsp;&nbsp;What is Intel® FSP ? </span> <br><br>
  @fa[certificate gp-bullet-ltgreen]<span style="font-size:0.9em">&nbsp;&nbsp;The UEFI.org Forum & Tianocore.org </span> 
 
@@ -67,6 +66,7 @@ Note:
 <br>
 <br>
 @snapend
+
 
 ---?image=/assets/images/slides/Slide5.JPG
 @title[UEFI Boot Flow]
@@ -87,11 +87,11 @@ Note:
  <li><span style="font-size:0.65em">Sensor Hubs </span></li>
  <li><span style="font-size:0.65em">NFC, GPS Controllers </span></li>
  <li><span style="font-size:0.65em">HDD/SSD </span></li>
- <li><span style="font-size:0.65em">Keyboard  Embedded Controllers </span></li>
+ <li><span style="font-size:0.65em">Keyboard and Embedded Controllers </span></li>
  <li><span style="font-size:0.65em">Battery Gauge </span></li>
  <li><span style="font-size:0.65em">Baseboard Management Controllers (BMC) </span></li>
  <li><span style="font-size:0.65em">Graphics/Video </span></li>
- <li><span style="font-size:0.65em">USB Thumb Drives, keyboards/mice </span></li>
+ <li><span style="font-size:0.65em">USB thumb drives, keyboards/mice </span></li>
  <li><span style="font-size:0.65em">Chargers, adapters </span></li>
  <li><span style="font-size:0.65em">TPM, security co-processors </span></li>
  <li><span style="font-size:0.65em">Routers, network appliances </span></li>
@@ -117,9 +117,6 @@ Note:
 </p>
 @snapend
 
-
-
-
 @snap[south-west span-45 fragment]
 <p align="right">@fa[haykal gp-bullet-magenta]</p>
 <p style="line-height:20%" ><br>&nbsp;</p>
@@ -131,7 +128,7 @@ Note:
 
 Note:
 ### BLOCK Diagram of a Platform
-- We see that Firmware is everywher
+- We see that Firmware is everywhere
 - GBe NIC, WiFi, Bluetooth, WiGig
 - Baseband (3G, LTE) Modems
 - Sensor Hubs
@@ -155,13 +152,12 @@ Note:
 
 Image source: http://www.tweaktown.com/reviews/7497/tyan-s7076-intel-c612-server-motherboard-review/index3.html
 
+
 +++?image=/assets/images/slides/Slide5.JPG
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
 @title[UEFI Boot Flow]
 <p align="right"><span class="gold" >@size[01.1em](<b>Firmware is Everywhere</b>) </span></p>
-
-
 
 @snap[south-west span-50 ]
 <p align="right">@fa[haykal fa-2x gp-bullet-magenta]</p>
@@ -178,7 +174,7 @@ Image source: http://www.tweaktown.com/reviews/7497/tyan-s7076-intel-c612-server
 
 Note:
 ### BLOCK Diagram of a Platform
-- We see that Firmware is everywher
+- We see that Firmware is everywhere
 - GBe NIC, WiFi, Bluetooth, WiGig
 - Baseband (3G, LTE) Modems
 - Sensor Hubs
@@ -201,8 +197,6 @@ Note:
   TPM    Trusted Platform Module
 
 Image source: http://www.tweaktown.com/reviews/7497/tyan-s7076-intel-c612-server-motherboard-review/index3.html
-
-
 
 
 ---?image=assets/images/binary-strings-black2.jpg
@@ -224,10 +218,11 @@ Serving as the root of trust in the system
 Initial code that takes control of the system
 May choose to authenticate the PEI Foundation 
 
+
 ---?image=/assets/images/slides/Slide8.JPG
 <!-- .slide: data-transition="none" -->
-@title[SEC - Pre-Memory Init ]
-<p align="right"><span class="gold" >@size[1.1em](<b>Pre-Memory Initialization </b>)</span></p>
+@title[Pre-Memory Init]
+<p align="right"><span class="gold" >@size[1.1em](<b>Pre-Memory Init</b>)</span></p>
 <p align="left">
 <span style="font-size:0.8em" >Address Space</span></p>
 
@@ -236,24 +231,27 @@ Note:
 - No-evection mode or Cache as Ram (CAR) is used for the Temporary memory
 
 
-
 +++
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
 @title[SEC - characteristics ]
-#### <p align="right"><span class="gold" >Starting at the reset vector </span></p>
+#### <p align="right"><span class="gold" >Starting at the reset vector </span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<b>SEC</b> </span></p>
 
-The Processor Executes SEC starting at the first fetch from the reset vector 
+The Processor Executes SEC starting at the first fetch from the reset vector:
 
-- SEC Consumes the Reset vector 
+- SEC Consumes the Reset vector at address space 4GB - 0x10
 - Serving as the root of trust 
 - May choose to authenticate the PEI Foundation
-- Init the APs waking stub
+- Initialize the Application Processors (AP) waking stub
 - Early microcode update
 - Collect BIST (Built-in Self Test)
-- Other charactistics of SEC   
+- Set up TEMP Memory (CAR, NEM)
+- Switch to Protected Mode (32 bit flat mode)
+- Other charactistics of SEC:
     - Executed in place from flash
-    - Written in assembly (16-bit & 32-bit) on Intel Architecuture	- 
+    - Written in assembly (16-bit & 32-bit) on Intel Architecuture
+    - BSP is the only processor executing (single thread)
+
 Note:
 SEC Function <Br>
           Consumes the Reset vector on IA
@@ -273,6 +271,8 @@ SEC will have Platform specific functions
 - Other charactistics of SEC   
   - Executed in place from flash
   - Written in assembly (16-bit & 32-bit)
+
+
 +++
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
@@ -293,11 +293,11 @@ A firmware file system (FFS) describes the organization of files and (optionally
 the firmware volume. Each firmware file system has a unique GUID, which is used by the firmware
 to associate a driver with a newly exposed firmware volume
 
+
 ---?image=/assets/images/slides/Slide11.JPG
 <!-- .slide: data-transition="none" -->		 
 @title[UEFI Boot Flow PEI]
 #### <p align="center"><span class="gold"  >UEFI - PI & EDK II Boot Flow </span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<b>PEI</b> </span></p>
-
 
 Note:
 PEI Function <Br>
@@ -320,7 +320,6 @@ Interfaces: Methods of Inter-PEIM communication
 Core set of services (PeiServices), PEIM to PEIM Interfaces (PPIs), and simple Notifies (no timer in PEI)
 
 
-
 ---?image=/assets/images/slides/Slide12.JPG
 <!-- .slide: data-transition="none" -->		 
 @title[UEFI Boot Flow PEI-DXEIPL  & Hobs ]
@@ -331,10 +330,10 @@ PEI - Hobs <Br>
 Transition to DXE :
 - HOBS  – a series of data structures in memory, created during PEI, that describe platform features, configuration, or data. HOBs are produced during PEI, and read-only during DXE (consumer). 
 
-+++
 
++++
 @title[UEFI Boot Flow PEI-DXEIPL ]
-#### <p align="center"><span class="gold"   >DXE IPL Characteristics   </span>
+#### <p align="center"><span class="gold"   >DXE IPL Characteristics</span>
 - No hard coded addresses allowed
 - Find Largest Physical Memory HOB
    - Ideally this should be near Top Of Memory (TOM)
@@ -352,8 +351,7 @@ Note:
 <!-- .slide: data-transition="none" -->		 
 
 @title[UEFI Boot Flow DXE]
-#### <p align="center"><span class="gold"   >UEFI - PI & EDK II Boot Flow </span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<b>DXE</b> </span></p>
-
+#### <p align="center"><span class="gold"   >UEFI - PI & EDK II Boot Flow </span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<b>DXE</b></span></p>
 
 Note:
 DXE <Br>
@@ -364,14 +362,13 @@ DXE drivers are typically stored in flash in compressed form and must be decompr
 
 +++
 @title[DXE Characteristics]
-#### <p align="right"><span class="gold"   >DXE Characteristics & Responsibilities  </span></p>
+#### <p align="right"><span class="gold"   >DXE Characteristics & Responsibilities</span></p>
 - Consumes HOB List from PEI
 - Builds UEFI and DXE Service Tables  
 - EFI System Table
 - UEFI Boot Services Table & UEFI Runtime Services Table
 - Hands off control to the DXE Dispatcher
 - and more  . . . 
-	
 
 Note:
 DXE Characteristics
@@ -392,14 +389,14 @@ DXE Characteristics
 
 - We want to Load Drivers to construct an environment that can support boot manager and  boot the OS 
 
----?image=/assets/images/slides/Slide16.JPG
-<!-- .slide: data-transition="none" -->		 
-@title[UEFI Boot Flow DXE]
-#### <p align="center"><span class="gold">UEFI - PI & EDK II Boot Flow </span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<b>DXE</b> </span></p>
 
+---?image=/assets/images/slides/Slide16.JPG
+<!-- .slide: data-transition="none" -->
+@title[UEFI Boot Flow DXE]
+#### <p align="center"><span class="gold"   >UEFI - PI & EDK II Boot Flow </span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<b>DXE</b> </span></p>
 
 Note:
-DXE - EFI System Table<Br>   
+DXE - EFI System Table<Br>
 UEFI system table passed into your driver
 
 It contains a pointer the System Configuration table  - This is an array of GUID Pointer pairs -  you can see the DXE Services table – The HOBs so for example if you have a PEIM that produces some data –and produces a GUIDed HOB this is how you would get the pointer to that HOBs – other examples 
@@ -428,11 +425,11 @@ There is also the option of converting all of the UEFI Runtime Services from a p
 
 Let’s take a quick look at the end product of Framework—the tables that Framework will create for UEFI aware Operating systems.   They are implemented by the drivers dispatched during the DXE phase.  As specified by the UEFI spec, there are boot-time services and runtime services.  There is a handle database and a list of all the protocols that these handles have associated with them.  Of course, keep in mind that all these will be gone from memory when the OS has booted.  The only things that will remain are the runtime services.
 
+
 ---?image=/assets/images/slides/Slide17.JPG
 <!-- .slide: data-transition="none" -->
 @title[UEFI Boot Flow EFI System Table]
-#### <p align="center"><span class="gold">UEFI System Table </span>
-
+#### <p align="center"><span class="gold"   >UEFI System Table </span>
 
 Note:
 DXE - EFI System Table<Br>   
@@ -440,18 +437,17 @@ Created in DXE and is the pointer to everything in the system
 
 
 ---?image=/assets/images/slides/Slide18.JPG
-<!-- .slide: data-transition="none" -->		 
+<!-- .slide: data-transition="none" -->
 @title[UEFI Boot Flow -SMM review]
 <p align="right"><span class="gold" ><b> UEFI - PI & EDK II Boot Flow </b></span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<b>SMM</b> </span></p>
 
 Note:
-### Review -Boot Execution Flow - SMM
+#### <p align="center"><span class="gold"   >UEFI - PI & EDK II Boot Flow </span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;<b>- SMM</b> </span></p>
 #### SMM:
 
 - Set up and initialized in DXE
 - Set up Services and handlers to remain in memory after OS Boots 
 - OS does not know about the times MM Handler is running
-
 
 
 ---?image=/assets/images/slides/Slide19.JPG
@@ -460,7 +456,7 @@ Note:
 <p align="right"><span class="gold" > <b>UEFI - PI & EDK II Boot Flow </b></span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<b>SMM</b> </span></p>
 
 Note:
-### Review -Boot Execution Flow - SMM
+#### <p align="center"><span class="gold"   >UEFI - PI & EDK II Boot Flow </span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;<b>- SMM</b> </span></p>
 #### SMM:
 
 - Set up and initialized in DXE
@@ -468,12 +464,10 @@ Note:
 - OS does not know about the times MM Handler is running
 
 
-
 ---?image=/assets/images/slides/Slide20.JPG
 <!-- .slide: data-transition="none" -->
 @title[UEFI Boot Flow DXE- UEFI Drivers]
-#### <p align="center"><span class="gold">UEFI - PI & EDK II Boot Flow </span><span style="color:white;">&nbsp;-&nbsp;<b>DXE UEFI</b> </span></p>
-
+#### <p align="center"><span class="gold"   >UEFI - PI & EDK II Boot Flow </span><span style="color:white;">&nbsp;-&nbsp;<b>DXE UEFI</b> </span></p>
 
 Note:
 DXE - UEFI Drivers<Br>
@@ -494,7 +488,6 @@ DXE - UEFI Drivers<Br>
 - Consumed Functions
 - Data Structures
 
-
 - UEFI DRIVERS Follow  the UEFI Driver Model Specification  Sec 10 UEFI 2.X Spec
 - Initialization
 - Binding
@@ -507,12 +500,12 @@ DXE - UEFI Drivers<Br>
 - Driver Health
 - Unload
 
+
 ---?image=/assets/images/slides/Slide21.JPG
 <!-- .slide: data-transition="none" -->
 
 @title[UEFI Boot Flow BDS]
-#### <p align="center"><span class="gold">UEFI - PI & EDK II Boot Flow </span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<b>BDS</b> </span></p>
-
+#### <p align="center"><span class="gold"   >UEFI - PI & EDK II Boot Flow </span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<b>BDS</b> </span></p>
 
 Note:
 BDS<Br>
@@ -542,10 +535,10 @@ BDS enumerates all possible boot devices in the system and create their boot opt
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
 @title[UEFI Boot Flow Device Path]
-#### <p align="right"><span class="gold">UEFI Device Path and Global Variables</span>
+#### <p align="right"><span class="gold"   >UEFI Device Path and Global Variables</span>
 <p style="line-height:80%" align="left"><span style="font-size:0.90em;" >
 The UEFI Device Path describes a boot target <br>
-&nbsp;&bull; &nbsp;@size[.70em;](Binary description of the physical location of a specific target)
+&nbsp;&bull; &nbsp;@size[.70em;]Binary description of the physical location of a specific target
 </span></p>
 ```
    Acpi(PNP0A03,0) /Pci(1F|1) /Ata(Primary,Master) /HD(Part3, Sig010…) \EFI\Boot/OSLoader.efi
@@ -555,7 +548,6 @@ The UEFI Device Path describes a boot target <br>
 @snap[south-west span-35 ]
 <p style="line-height:60%"><span style="font-size:0.5em"> Demo `Dmpstore`  - <a href="https://youtu.be/SQuepEWWCZk">YouTube</a> </span></p>
 @snapend
-
 
 Note:
 Device Path and Global Variables<Br>
@@ -592,12 +584,12 @@ Assuming a complete and successful execution of Diagnostics, the OS loader will 
 
 This Boot of the operating system was initiated, and successful, starting from a a simple path defining the device (location) from which to boot, and ending with a viable OS execution on the platfrom. 
 
+
 ---?image=/assets/images/slides/Slide23.JPG
 <!-- .slide: data-transition="none" -->
 
 @title[UEFI Boot Flow HII]
-#### <p align="center"><span class="gold">UEFI - PI & EDK II Boot Flow </span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<b>HII</b> </span></p>
-
+#### <p align="center"><span class="gold"   >UEFI - PI & EDK II Boot Flow </span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<b>HII</b> </span></p>
 
 Note:
 HII<Br>
@@ -619,7 +611,6 @@ An application that uses String and Font support
 Package
 Self supporting data structure containing fonts, strings, and forms from a driver or set of drivers
 
-
 Minimum FILES needed for HII 
 .c - Driver source file  
 Consumes HII protocols
@@ -634,44 +625,41 @@ Defines strings in different languages
 Defines the layout of the screen 
 .inf    Pre-Make file 
 
-	
+
 ---?image=/assets/images/slides/Slide24.JPG
 <!-- .slide: data-transition="none" -->
 @title[UEFI Boot Flow Shell]
-#### <p align="center"><span class="gold">UEFI - PI & EDK II Boot Flow </span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<b>TSL</b> </span></p>
-
-
+#### <p align="center"><span class="gold"   >UEFI - PI & EDK II Boot Flow </span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<b>TSL</b> </span></p>
 
 Note:
 UEFI Shell<Br>
 - UEFI Shell has complete control of the whole platform and resources
-	
+
+
 ---?image=/assets/images/slides/Slide25.JPG
 <!-- .slide: data-transition="none" -->
 @title[UEFI Boot Flow Boot Loader]
-#### <p align="center"><span class="gold">UEFI - PI & EDK II Boot Flow </span><span style="color:white;">-&nbsp;<b>Boot Loader</b> </span></p>
-
+#### <p align="center"><span class="gold"   >UEFI - PI & EDK II Boot Flow </span><span style="color:white;">-&nbsp;<b>Boot Loader</b> </span></p>
 
 Note:
 Boot Loader<Br>
 - OS Boot Loader Application will call "Exit Boot Services"
-	
+
+
 +++?image=/assets/images/slides/Slide26.JPG
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
 @title[UEFI Boot Flow Boot Exit]
-#### <p align="center"><span class="gold">UEFI - PI & EDK II Boot Flow </span><span style="color:white;">-&nbsp;<b>Event</b> </span></p>
+#### <p align="center"><span class="gold"   >UEFI - PI & EDK II Boot Flow </span><span style="color:white;">-&nbsp;<b>Event</b> </span></p>
 
 Note:
 
-	
+
 +++?image=/assets/images/slides/Slide27.JPG
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
 @title[UEFI Boot Flow Boot OS]
-#### <p align="center"><span class="gold">UEFI - PI & EDK II Boot Flow </span><span style="color:white;">-&nbsp;<b>Boot UEFI OS</b> </span></p>
-
-
+#### <p align="center"><span class="gold"   >UEFI - PI & EDK II Boot Flow </span><span style="color:white;">-&nbsp;<b>Boot UEFI OS</b> </span></p>
 
 Note:
 Boot UEFI OS<Br>
@@ -683,18 +671,18 @@ TSL:
 - Manufacturing Test Applications can run
 - UEFI Shell 
 
-
 Run Time
 
 - Our Job is done
 
 - When the OS takes over it can provide a virtual address space for the EFI Runtime Services. See UEFI 2.5 Chapter 7 Runtime Services - 7.4 Virtual Memory Services
 
+
 ---?image=assets/images/binary-strings-black2.jpg
-@title[What is SMM Section]
+@title[What is Management Mode (MM) Section]
 <br><br><br><br><br>
 ### <span class="gold"  >What is Mamangement Mode (MM)</span>
-<span style="font-size:0.85em" >The UEFI PI Introduces the Management Mode (formerly known as SMM) </span>
+<span style="font-size:0.85em" >The UEFI PI Introduces the MM or System Management Mode (SMM) </span>
 
 Note:
 Section
@@ -703,7 +691,7 @@ Section
 ---?image=/assets/images/slides/Slide29.JPG
 @title[PI Spec Introduces Management Mode (MM) ]
 <br>
-<p align="center"><span class="gold" ><b>Platform Initialization (PI) Specification Introduces Management Mode (MM)**</b></span></p>
+#### <p align="center"><span class="gold" ><b>Platform Initialization (PI) Specification Introduces Management Mode (MM)**</b></span></p>
 <p style="line-height:80%"><span style="font-size:0.9em" > UEFI PI-standard for creating a protected execution environment using hardware resources</span></p>
 - <span style="font-size:0.8em" >Dedicated, protected memory space, entry point and hardware resources, such as timers and interrupt controllers</span>
 - <span style="font-size:0.8em" >Implemented using SMM (Intel® Architecture) or TrustZone(Arm)</span>
@@ -729,12 +717,9 @@ System Management Mode (SMM) describes a Processor operating mode which services
 - SmmLib includes a subset of the DXE core services, such as memory allocation, device I/O protocol, and others 
 
 
- 
-
-  
 ---?image=/assets/images/slides/Slide30.JPG
 @title[Why MMI Vulnerabilities )]
-<p style="line-height:95%" align="right"><span class="gold" ><b>Why are Software MMI Vulnerabilities so</b><br><span style="font-size:01.25em" >@color[red](<b>Dangerous?</b>)</span></p>
+#### <p style="line-height:95%" align="center"><span class="gold" ><b>Why are Software MMI Vulnerabilities so</b><br><span style="font-size:01.25em" >@color[red](<b>Dangerous?</b>)</span></p>
 
 @snap[south-east span-30 fragment ]
 ![bomb_SMM](/assets/images/Bomb_SMM.png)
@@ -743,13 +728,12 @@ System Management Mode (SMM) describes a Processor operating mode which services
 <br>
 <br>
 
-
 @snapend
 
 @snap[north-west span-65 fragment ]
 <br>
 <br>
-<span style="font-size:01.25em" ><b><i>@color[yellow](Because . . .)</i></b></span><br>
+<span style="font-size:01.25em" ><b><i>@color[yellow]Because . . .</i></b></span><br>
 <span style="font-size:0.9em" >Software MMIs can be asked to perform: </span>
 <ul style="line-height:0.8;">
 <li><span style="font-size:0.8em" >Privileged operations: </span><span style="font-size:0.6em" ><font color="#87E2A9">Flash BIOS, flash EC, write to MMIO, write to MMRAM, etc. </font></span></li>
@@ -761,17 +745,13 @@ System Management Mode (SMM) describes a Processor operating mode which services
 
 @snapend
 
-
-
 Note: 
-
-
 same as Slide 
 
 
 ---
 @title[UEFI Platform Firmware Assumptions ]
-<p align="right"><span class="gold" ><b>UEFI Platform Firmware Assumptions &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></span></p>
+#### <p align="right"><span class="gold" ><b>UEFI Platform Firmware Assumptions </b></span></p>
 
 @snap[north-west span-100 fragment]
 @css[text-yellow](&nbsp;<br><br>)
@@ -801,15 +781,14 @@ same as Slide
 <br>
 @snapend
 
-
 Note:
-
 Same as slide 
+
 
 ---?image=/assets/images/slides/Slide32.JPG
 @title[Key Points for More Secure Software MMI Handlers]
 <br>
-<p align="right"><span class="gold" ><b>Key Points for More Secure Software MMI Handlers</b></span></p>
+#### <p align="right"><span class="gold" ><b>Key Points for More Secure Software MMI Handlers</b></span></p>
 <br>
 <div class="left1">
      <ul>
@@ -825,19 +804,19 @@ Same as slide
 </div>
 
 
-
-
 ---?image=assets/images/binary-strings-black2.jpg
 @title[Intel FSP Section]
 <br><br><br><br><br>
-### <span class="gold"  >The Intel® Firmware Support Package (Intel® FSP) </span>
+### <span class="gold"   >The Intel® Firmware Support Package (Intel® FSP) </span>
 
 Note:
 Section on Intel FSP
+
+
 ---
-@title[Intel FSP Description]
+@title[Intel FSP Components]
 <br>
-#### <span class="gold">Intel® FSP  -  Components </span>
+#### <span class="gold"   >Intel® FSP  -  Components </span>
 <ul style="list-style-type:disc; line-height:0.7;">
  <li><span style="font-size:0.8em" >CPU, memory controller, and chipset initialization functions as a binary package   </span></li>
  <li><span style="font-size:0.8em" >Provides silicon initialization ingredients   </span></li>
@@ -845,13 +824,13 @@ Section on Intel FSP
  <li><span style="font-size:0.8em" >Integration guide, includes API documentation   </span></li>
 </ul>
 
-<p style="line-height:70%"><span style="font-size:0.7em" >Intel FSP is currently available for the many Intel hardware-producing divisions &nbsp;&nbsp;&nbsp;
+<p style="line-height:70%"><span style="font-size:0.7em" >Intel FSP is currently available for the many Intel hardware-producing divisions <br>
 See: <a href="https://software.intel.com/en-us/articles/intel-firmware-support-package"> About Intel FSP</a> </span></p>
 <p style="line-height:70%"><span style="font-size:0.8em" >White Paper Example: <a href="https://github.com/mangguo321/Braswell/blob/master/Documents/Open_Braswell_Platform_Designing_Porting_Guide.pdf">
 Open Braswell - Design and Porting Guide</a></span></span></p>
 
 @snap[south span-100 fragment]
-@box[bg-purple-pp text-white rounded my-box-pad2  ](<p style="line-height:70%" ><span style="font-size:0.9em; font-weight: bold;" > Intel® FSP is <b>NOT</b> a stand-alone boot-loader<br>&nbsp;</span></p>)
+@box[bg-purple-pp text-white rounded my-box-pad2  ](<p style="line-height:70%" ><span style="font-size:0.9em; font-weight: bold;" > Intel® FSP is <b>NOT</b> a stand-alone boot-loader </span></p>)
 @snapend
 
 Note:
@@ -862,22 +841,21 @@ Intel FSP is designed for integration into a variety of boot loaders, including 
 ---?image=/assets/images/slides/Slide35.JPG
 <!-- .slide: data-transition="none" -->
 @title[Intel FSP Diagram-1]
-#### <p align="center"><span class="gold">Intel® FSP to Open Source EDK II </span>
-
+#### <p align="center"><span class="gold"   >Intel® FSP to Open Source EDK II </span>
 
 Note:
 Intel FSP 1<Br>
+
 
 +++?image=/assets/images/slides/Slide36.JPG
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
 @title[Intel FSP Diagram-2]
-#### <p align="center"><span class="gold">Intel® FSP to Open Source EDK II </span>
-    
-
+#### <p align="center"><span class="gold"   >Intel® FSP to Open Source EDK II </span>
 
 Note:
 Intel FSP 2<Br>    
+
 
 +++?image=/assets/images/slides/Slide37.JPG
 <!-- .slide: data-background-transition="none" -->
@@ -885,21 +863,24 @@ Intel FSP 2<Br>
 @title[Intel FSP Diagram-3]
 
 <p align="center" style="margin-top: -3px; margin-bottom: -3px"><span style="color:white; font-size:0.75em"> 
-Intel®  FSP "Produced" to <br> "Consuming" Intel® Architecture Firmware </span>
- 
+Applying “Produced” Intel® Firmware Support Package (FSP) <br>
+to “Consuming” IA firmware</span>
+
+@snap[south span-100 fragment]
+@box[bg-purple-pp text-white rounded my-box-pad2  ](<p style="line-height:70%" ><span style="font-size:0.9em; font-weight: bold;" >Intel FSP is independent of the bootloader solution</span></p>)
+@snapend
+
 Note:
 Applying “Produced” Intel® Firmware Support Package (FSP) to “Consuming” IA firmware <Br>  
 
 
-
 ---
 @title[Intel FSP from UEFI Boot Flow]
-#### <p align="center"><span class="gold">UEFI - PI & EDK II Boot Flow </span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<b>FSP</b> </span></p>
+#### <p align="center"><span class="gold"   >UEFI - PI & EDK II Boot Flow </span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<b>FSP</b> </span></p>
 
 @snap[south-west span-100]
 ![boot-flow](/assets/images/boot-flow.png)
 @snapend
-
 
 @snap[south-west span-45 fragment]
 ![fsp-bin](/assets/images/FSP_FD.png)
@@ -912,13 +893,14 @@ Applying “Produced” Intel® Firmware Support Package (FSP) to “Consuming�
 Note:
 Platform Initialization (PI) & UEFI w/ EDK <Br>
 - Intel FSP boot flow   
- 
+
+
 ---?image=/assets/images/slides/Slide39.JPG
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
 @title[Intel FSP from UEFI Boot Flow 2]
 
-<p align="center"><span class="gold">Boot Flow with UEFI & Intel® FSP</span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+#### <p align="center"><span class="gold"   >Boot Flow with UEFI & Intel® FSP</span></p>
 
 Note:
 Platform Initialization (PI) & UEFI w/ EDK <Br>
@@ -934,7 +916,7 @@ Then the PeiCore will continue dispatching the final PEIMs and jump into the Dxe
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
 
-<p align="center"><span class="gold">MinPlatform @color[yellow](+)Intel<sup>®</sup> FSP Boot Flow </span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+#### <p align="center"><span class="gold"   >MinPlatform @color[yellow](+)Intel<sup>®</sup> FSP Boot Flow </span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
 
 Note:
 
@@ -962,40 +944,37 @@ Stage 7
 - Performance Optimizations
 
 
-
-
-
-
-
 ---
 @title[Intel FSP Producer]
-##### <p align="center"<span class="gold">Intel® FSP  - Producer </span></p>
+##### <p align="center"<span class="gold"   >Intel® FSP  - Producer </span></p>
 <ul style="line-height:0.8;">
-  <li><span style="font-size:0.8em" > Examples of binary instances on   <a href="http://www.intel.com/fsp">http://www.intel.com/fsp </a> with integration guides</span></li>
+  <li><span style="font-size:0.8em" > Examples of binary instances on <a href="http://www.intel.com/fsp">http://www.intel.com/fsp </a> with integration guides</span></li>
   <ul style="list-style-type:none" style="line-height:0.7;" >
-    <li><span style="font-size:0.67em" >&bull; This includes hardware initialization code that is EDK II based PEI <br>&nbsp;&nbsp;&nbsp;&nbsp;Modules (PEIM’s)</span></li>
+    <li><span style="font-size:0.67em" >&bull; This includes hardware initialization code that is EDK II based PEI <br>&nbsp;&nbsp;&nbsp;&nbsp;Modules (PEIMs)</span></li>
   </ul>
-  <li><span style="font-size:0.8em" >Modules are encapsulated as a UEFI PI firmware volume w/ extra header</span></li>
-  <li><span style="font-size:0.8em" >Configure w/Vital Product Data (VPD)-style Platform Configuration Data (PCD) externalized from the modules</span></li>
+  <li><span style="font-size:0.8em" >Modules are encapsulated as a UEFI PI firmware volume with extra header</span></li>
+  <li><span style="font-size:0.8em" >Configure with Vital Product Data (VPD)-style Platform Configuration Data (PCD) externalized from the modules</span></li>
   <li><span style="font-size:0.8em" >Resultant output state reported via UEFI Platform Initialization (PI) Hand Off Block (HOB)</span></li>
 </ul>
-<p style="line-height:50%"><span style="font-size:0.5em" > <a href="http://www.intel.com/content/dam/www/public/us/en/documents/technical-specifications/fsp-architecture-spec-v2.pdf"> Intel® Firmware Support Package (Intel® FSP) External Architecture Specification (EAS) v2.0 PDF </a><BR>
+<p style="line-height:50%"><span style="font-size:0.5em" > <a href="https://cdrdv2.intel.com/v1/dl/getContent/611786"> Intel® Firmware Support Package (Intel® FSP) External Architecture Specification (EAS) v2.1 </a><BR>
+<p> Resource: <a href="https://software.intel.com/en-us/articles/intel-firmware-support-package"></a>
 </span> </p>
 
 Note:
 
+
 ---
 @title[Intel FSP Source]
-##### <p align="right"><span class="gold">Source for Intel® FSP  Producer Code</span></p>
+##### <p align="right"><span class="gold"   >Source for Intel® FSP  Producer Code</span></p>
 
 <ul style="line-height:0.8;">
-  <li><span style="font-size:0.8em" >CPU and chipset-specific code for PEIM’s inside of the Intel FSP can be open or closed, code at <a href="https://github.com/IntelFsp/FSP"> Intel FSP-repo </a></span></li><br>
+  <li><span style="font-size:0.8em" >CPU and chipset-specific code for PEIMs inside of the Intel FSP can be open or closed, code at <a href="https://github.com/IntelFsp/FSP"> Intel® Firmware Support Package (Intel® FSP) Binaries </a></span></li><br>
   <li><span style="font-size:0.8em" >PEI core and infrastructure code at <a href="https://github.com/tianocore/edk2"> tianocore.org/edk2 </a></span></li>
   <ul style="list-style-type:disc" style="line-height:0.8;" >
      <li><span style="font-size:0.7em" ><a href="https://github.com/tianocore/edk2/tree/master/MdePkg"> /MdePkg </a></span></li>
      <li><span style="font-size:0.7em" ><a href="https://github.com/tianocore/edk2/tree/master/MdeModulePkg"> /MdeModulePkg </a></span></li><br>
   </ul>
-  <li><span style="font-size:0.8em" >And the code to create the Intel FSP interfaces can be found at</span></li> 
+  <li><span style="font-size:0.8em" >Code to interface Intel FSP to EDK II can be found at: </span></li> 
    <ul style="list-style-type:disc" style="line-height:0.8;" >
      <li><span style="font-size:0.7em" ><a href="https://github.com/tianocore/edk2/tree/master/IntelFsp2Pkg"> /IntelFsp2Pkg </a> and Wrapper at: <a href="https://github.com/tianocore/edk2/tree/master/IntelFsp2WrapperPkg">/IntelFsp2WrapperPkg </a></span></li>
    </li>
@@ -1013,15 +992,14 @@ Talking point – anyone would could be producer.  IBV could.  Just worry about 
 ---?image=assets/images/binary-strings-black2.jpg  
 @title[Whats New in UEFI Section]    
 <br><br><br><br><br>
-### <span class="gold"  >What's new in the UEFI Specifications  </span>
-
+### <span class="gold"  >What's new in the UEFI Specifications? </span>
 
 
 ---?image=/assets/images/slides/Slide44.JPG
 <!-- .slide: data-transition="none" -->
 
 @title[UEFI Spec pic]    
-#### <p align="center"><span class="gold">Latest UEFI Specifications </span> </p>
+#### <p align="center"><span class="gold"   >Latest UEFI Specifications </span> </p>
 <p align="right"><span style="font-size:0.6em" ><a href="http://www.uefi.org"> http://uefi.org</a></span></p>
 
 <br><br><br><br><br><br><br><br><br>
@@ -1031,11 +1009,13 @@ Talking point – anyone would could be producer.  IBV could.  Just worry about 
 UEFI Forum Education Link </a></span></p>
 
 Note:
-- UEFI Specifications v2.7A (9/2017)
-- ACPI Specification v6.2 (5/2017)
+Image needs to be updated as of July 2020
+- UEFI Specifications v2.8B (6/2020)
 - UEFI Shell Specification v2.2 (1/2016)
-- PI Packaging Specification v1.1 (1/2016)
-- UEFI PI Specification v1.6 (5/2017)
+- UEFI PI Specification v1.7A (4/2020)
+- Self Certification Test v2.7B (12/2019)
+- PI Distro Package Specification v1.1 (1/2016)
+- ACPI Specification v6.3 (1/2019)
 
 
 ---  
@@ -1076,14 +1056,14 @@ Include Helper .chm files for different Packages: <a href="https://github.com/ti
 
 ---  
 @title[EDK II Community Development]   
-<p align="center"><span class="gold"   >@size[1.1em](<b>EDK II - Open Source &nbsp;&nbsp;&nbsp; </b>)</span></p>
+<p align="center"><span class="gold"   >@size[1.1em](<b>EDK II - Open Source </b>)</span></p>
 
 <span style="font-size:01.0em">@color[#e49436](Community Development)</span>
 <div class="left1">
      <ul style="list-style-type:disc; line-height:0.8;">
-        <li><span style="font-size:0.8em">Stable Tag Releases- cycle of releasing stable versions of  EDK II Firmware </span> </li>
-        <li><span style="font-size:0.8em">Adding UEFI Spec updates and new key features  and bug fixes</span> </li>
-        <li><span style="font-size:0.8em">Three phases of development</span> </li>
+        <li><span style="font-size:0.8em">Stable Tag Releases- cycle of releasing stable versions of EDK II Firmware </span> </li>
+        <li><span style="font-size:0.8em">Adding UEFI Spec updates and new key features and bug fixes</span> </li>
+        <li><span style="font-size:0.8em">Three phases of development: </span> </li>
         <ul style="list-style-type:none; line-height:0.65;">
            <li><span style="font-size:0.65em">- Development phase</span> </li>
            <li><span style="font-size:0.65em">- Soft Feature Freeze</span> </li>
@@ -1106,10 +1086,9 @@ Include Helper .chm files for different Packages: <a href="https://github.com/ti
 ![Community](/assets/images/Community.png )
 @snapend
 
-
 @snap[south-west span-45 ]
 <p style="line-height:70%" align="left"><span style="font-size:0.7em">
-More information on Stable Tag Planning: <a href="https://github.com/tianocore/tianocore.github.io/wiki/EDK-II-Release-Planning"> TianoCore Wiki</a>
+More information on Stable Tag Releases: <a href="https://github.com/tianocore/tianocore.github.io/wiki/EDK-II-Release-Planning"> TianoCore Wiki</a>
 <br>
 </span></p>
 <br>
@@ -1152,13 +1131,15 @@ Between the soft feature freeze and the hard feature freeze, previously reviewe
  @fa[certificate gp-bullet-green]<span style="font-size:0.85em">&nbsp;&nbsp;The System Firmware is a binary image that starts<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;execution as the reset vector & is typically a SPI device</span><br>
  @fa[certificate gp-bullet-cyan]<span style="font-size:0.85em">&nbsp;&nbsp;UEFI & PI Boot Flow Process, SEC, PEI, DXE, BDS, TSL, OS</span><br>
  @fa[certificate gp-bullet-yellow]<span style="font-size:0.85em">&nbsp;&nbsp;System Management Mode is in Ring 0 in the System FW </span> <br>
- @fa[certificate gp-bullet-magenta]<span style="font-size:0.85em">&nbsp;&nbsp;Intel® FSP will initialize the processor, chipset, silicon<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and memory </span> <br>
+ @fa[certificate gp-bullet-magenta]<span style="font-size:0.85em">&nbsp;&nbsp;Intel® FSP will initialize the processor, chipset, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and memory </span> <br>
  @fa[certificate gp-bullet-ltgreen]<span style="font-size:0.85em">&nbsp;&nbsp;The UEFI.org & Tianocore.org for Specs and Open source  </span> 
+
 
 ---?image=assets/images/gitpitch-audience.jpg
 @title[Questions]
 <br>
 ![Questions](/assets/images/questions.JPG =10x) 
+
 
 ---
 @title[return to main]
@@ -1184,6 +1165,7 @@ Between the soft feature freeze and the hard feature freeze, previously reviewe
 <br><br><br>
 ![Logo Slide](/assets/images/TianocoreLogo.png =10x)
 
+
 ---  
 @title[Backup]
 <br><br><br><br><br>
@@ -1192,7 +1174,7 @@ Between the soft feature freeze and the hard feature freeze, previously reviewe
 
 ---
 @title[FSP detail 0]
-<p align="right"><span class="gold" >@size[1.1em](<b>What is Intel® Firmware Support Package?  </b>)</span><span style="font-size:0.75em;" >  </span></p>
+#### <p align="right"><span class="gold" >@size[1.1em](<b>What is Intel® Firmware Support Package?  </b>)</span><span style="font-size:0.75em;" >  </span></p>
 <ul style="list-style-type:disc; line-height:0.7;">
   <li><span style="font-size:0.7em">Intel® Firmware Support Package (Intel® FSP) includes: </span></li>
   <ul style="list-style-type:disc; line-height:0.6;">
@@ -1203,7 +1185,7 @@ Between the soft feature freeze and the hard feature freeze, previously reviewe
  </ul> 
   <li><span style="font-size:0.7em">Provide silicon initialization code: </span></li>
   <ul style="list-style-type:disc; line-height:0.6;">
-     <li><span style="font-size:0.57em">Initializes processor core, chipset as explained in BIOS Writers’ Guid </span></li>
+     <li><span style="font-size:0.57em">Initializes processor core, chipset as explained in BIOS Writers’ Guide </span></li>
      <li><span style="font-size:0.57em">Is relocatable in ROM </span></li>
      <li><span style="font-size:0.57em">Can be configured for platform customization </span></li>
   </ul> 
@@ -1220,7 +1202,7 @@ Between the soft feature freeze and the hard feature freeze, previously reviewe
 @title[FSP detail 1]
 <p align="right" style="line-height:50%"><span style="font-size:0.8em"><b>Intel® FSP V2.0 Boot Flow</b><br> </span><span style="font-size:0.5em"> Using Intel® FSP w/ EDK II: <a href="https://software.intel.com/sites/default/files/managed/d9/57/a-tour-beyond-bios-using-the-intel-firmware-support-package-with-the-efi-developer-kit-ii-fsp2.0.pdf"> PDF</a>
 <br></span> </p>
-	
+
 Note:
 The Intel® Firmware Support Package (Intel® FSP) [FSP] provides key programming information for initializing Intel silicon and can be easily integrated into a firmware boot environment of the developer’s choice. 
 Different Intel hardware devices may have different Intel FSP binary instances, so a platform user needs to choose the right Intel FSP binary release. The FSP binary should be independent of the platform design but specific to the Intel CPU and chipset complex. We refer to the entities that create the FSP binary as the “FSP Producer” and the developer who integrates the FSP into some platform firmware as the “FSP Consumer.” 
@@ -1239,7 +1221,7 @@ Source https://software.intel.com/sites/default/files/managed/d9/57/a-tour-beyon
 <ul style="list-style-type:none; line-height:0.7;">
   <li><span style="font-size:0.7em"><b>Placement:  </b> </span></li>
   <ul style="list-style-type:disc; line-height:0.6;">
-     <li><span style="font-size:0.57em">Once the Intel FSP binary is ready for integration, the bootloader build process needs to configured to place the Intel FSP binary at the proper base address. </span></li>
+     <li><span style="font-size:0.57em">Once the Intel FSP binary is ready for integration, the bootloader build process needs to be configured to place the Intel FSP binary at the proper base address. </span></li>
  </ul> 
   <li><span style="font-size:0.7em"><b>Rebase:  </b> </span></li>
   <ul style="list-style-type:disc; line-height:0.6;">
@@ -1247,14 +1229,21 @@ Source https://software.intel.com/sites/default/files/managed/d9/57/a-tour-beyon
  </ul> 
   <li><span style="font-size:0.7em"><b>Interface:  </b> </span></li>
   <ul style="list-style-type:disc; line-height:0.6;">
-     <li><span style="font-size:0.57em">The bootloader needs to add code to setup the Operating environment for the Intel FSP, call Intel FSP with the correct parameters and parse the Intel FSP output to retrieve the necessary information returned by the Intel FSP. </span></li>
+     <li><span style="font-size:0.57em">The bootloader needs to add code to setup the Operating environment for the Intel FSP, call Intel FSP with the correct parameters, and parse the Intel FSP output to retrieve the necessary information returned by the Intel FSP. </span></li>
  </ul> 
   <li><span style="font-size:0.7em"><b>Customization:  </b> </span></li>
   <ul style="list-style-type:disc; line-height:0.6;">
      <li><span style="font-size:0.57em">The static Intel FSP configuration parameters/features are part of the Intel FSP binary and can be customized with BCT  </span></li>
  </ul> 
+ <p>See <a href="https://www.intel.com/content/www/us/en/intelligent-systems/intel-firmware-support-package/fsp-firmware-solutions-iot-video.html">Video link<a> - at 41.00 seconds into the video </p>
 
 </ul>
+
+
+---?image=assets/images/gitpitch-audience.jpg
+@title[Logo Slide]
+<br><br><br>
+![Logo Slide](/assets/images/TianocoreLogo.png =10x)
 
 
 ---
