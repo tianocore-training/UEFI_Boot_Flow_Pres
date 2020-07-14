@@ -537,7 +537,7 @@ BDS enumerates all possible boot devices in the system and create their boot opt
 @title[UEFI Boot Flow Device Path]
 #### <p align="right"><span class="gold"   >UEFI Device Path and Global Variables</span>
 <p align="left"><span style="font-size:0.90em;">The UEFI Device Path describes a boot target:</p>
-<p><span style="font-size:0.70em;">Binary description of the physical location of a specific target</span></p>
+- <p><span style="font-size:0.70em;">Binary description of the physical location of a specific target</span></p>
 
 ```
    Acpi(PNP0A03,0) /Pci(1F|1) /Ata(Primary,Master) /HD(Part3, Sig010…) \EFI\Boot/OSLoader.efi
@@ -693,7 +693,7 @@ Section
 #### <p align="center"><span class="gold" ><b>Platform Initialization (PI) Specification Introduces Management Mode (MM)**</b></span></p>
 <p style="line-height:80%"><span style="font-size:0.9em" > UEFI PI-standard for creating a protected execution environment using hardware resources</span></p>
 - <span style="font-size:0.8em" >Dedicated, protected memory space, entry point and hardware resources, such as timers and interrupt controllers</span>
-- <span style="font-size:0.8em" >Implemented using SMM (Intel® Architecture) or TrustZone(Arm)</span>
+- <span style="font-size:0.8em" >Implemented using SMM (Intel® Architecture) or TrustZone (ARM)</span>
 - <span style="font-size:0.8em" >Highest-privilege operating mode (`Ring 0`) with greatest access to system memory and hardware resources </span>
 <br>
 <br>
@@ -829,7 +829,8 @@ See: <a href="https://software.intel.com/en-us/articles/intel-firmware-support-p
 Open Braswell - Design and Porting Guide</a></span></span></p>
 
 @snap[south span-100 fragment]
-@box[bg-purple-pp text-white rounded my-box-pad2  ](<p style="line-height:70%" ><span style="font-size:0.9em; font-weight: bold;" > Intel® FSP is <b>NOT</b> a stand-alone boot-loader </span></p>)
+@box[bg-purple-pp text-white rounded my-box-pad2  ](<p style="line-height:70%" ><span style="font-size:0.9em; font-weight: bold;" > Intel® FSP is NOT a stand-alone boot-loader </span></p>)
+<br>
 @snapend
 
 Note:
@@ -915,7 +916,7 @@ Then the PeiCore will continue dispatching the final PEIMs and jump into the Dxe
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
 
-#### <p align="center"><span class="gold"   >MinPlatform @color[yellow](+)Intel<sup>®</sup> FSP Boot Flow </span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+#### <p align="center"><span class="gold">MinPlatform @color[yellow](+) Intel<sup>®</sup> FSP Boot Flow </span><br><span style="font-size:0.8em;"> - Staged Approach</span></p>
 
 Note:
 
