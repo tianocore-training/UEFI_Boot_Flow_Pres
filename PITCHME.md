@@ -536,10 +536,9 @@ BDS enumerates all possible boot devices in the system and create their boot opt
 <!-- .slide: data-transition="none" -->
 @title[UEFI Boot Flow Device Path]
 #### <p align="right"><span class="gold"   >UEFI Device Path and Global Variables</span>
-<p style="line-height:80%" align="left"><span style="font-size:0.90em;" >
-The UEFI Device Path describes a boot target <br>
-&nbsp;&bull; &nbsp;@size[.70em;]Binary description of the physical location of a specific target
-</span></p>
+<p align="left"><span style="font-size:0.90em;">The UEFI Device Path describes a boot target:</p>
+<p><span style="font-size:0.70em;">Binary description of the physical location of a specific target</span></p>
+
 ```
    Acpi(PNP0A03,0) /Pci(1F|1) /Ata(Primary,Master) /HD(Part3, Sig010…) \EFI\Boot/OSLoader.efi
 
