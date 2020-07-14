@@ -82,19 +82,19 @@ Note:
 <br>
 <p style="line-height:50%" ><br>&nbsp;</p>
 <ul style="list-style-type:disc; line-height:0.7;">
- <li><span style="font-size:0.65em">GBe NIC, WiFi, Bluetooth, WiGig </span></li>
- <li><span style="font-size:0.65em">Baseband (3G, LTE) Modems </span></li>
- <li><span style="font-size:0.65em">Sensor Hubs </span></li>
- <li><span style="font-size:0.65em">NFC, GPS Controllers </span></li>
- <li><span style="font-size:0.65em">HDD/SSD </span></li>
- <li><span style="font-size:0.65em">Keyboard and Embedded Controllers </span></li>
- <li><span style="font-size:0.65em">Battery Gauge </span></li>
- <li><span style="font-size:0.65em">Baseboard Management Controllers (BMC) </span></li>
- <li><span style="font-size:0.65em">Graphics/Video </span></li>
- <li><span style="font-size:0.65em">USB thumb drives, keyboards/mice </span></li>
- <li><span style="font-size:0.65em">Chargers, adapters </span></li>
- <li><span style="font-size:0.65em">TPM, security co-processors </span></li>
- <li><span style="font-size:0.65em">Routers, network appliances </span></li>
+ <li><span style="font-size:0.5em">GBe NIC, WiFi, Bluetooth, WiGig </span></li>
+ <li><span style="font-size:0.5em">Baseband (3G, LTE) Modems </span></li>
+ <li><span style="font-size:0.5em">Sensor Hubs </span></li>
+ <li><span style="font-size:0.5em">NFC, GPS Controllers </span></li>
+ <li><span style="font-size:0.5em">HDD/SSD </span></li>
+ <li><span style="font-size:0.5em">Keyboard and Embedded Controllers </span></li>
+ <li><span style="font-size:0.5em">Battery Gauge </span></li>
+ <li><span style="font-size:0.5em">Baseboard Management Controllers (BMC) </span></li>
+ <li><span style="font-size:0.5em">Graphics/Video </span></li>
+ <li><span style="font-size:0.5em">USB thumb drives, keyboards/mice </span></li>
+ <li><span style="font-size:0.5em">Chargers, adapters </span></li>
+ <li><span style="font-size:0.5em">TPM, security co-processors </span></li>
+ <li><span style="font-size:0.5em">Routers, network appliances </span></li>
 </ul>
 <br>
 @snapend
