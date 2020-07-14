@@ -1012,25 +1012,25 @@ Note:
 <p align="Left"><span style="color:#e49436; font-size:0.8em"> UEFI Development Kit (UDK) releases are stable, validated snapshots of EDK II  </span> </p>
 <div class="left">
      <ul style="list-style-type:disc; line-height:0.7;">
-        <li><span style="font-size:0.7em">Industry Standards & Public Specifications</span> </li>
+        <li><span style="font-size:0.6em">Industry Standards & Public Specifications:</span> </li>
         <ul style="list-style-type:none; line-height:0.65;">
-          <li><span style="font-size:0.67em">&bull; UEFI 2.7</span></li>
-          <li><span style="font-size:0.67em">&bull; UEFI PI 1.6</span></li>
-          <li><span style="font-size:0.67em">&bull; ACPI 6.2</span></li>
+          <li><span style="font-size:0.5em">&bull; UEFI 2.7</span></li>
+          <li><span style="font-size:0.5em">&bull; UEFI PI 1.6</span></li>
+          <li><span style="font-size:0.5em">&bull; ACPI 6.2</span></li>
         </ul>
-        <li><span style="font-size:0.7em">Centralized Config Management </span></li>
-        <li><span style="font-size:0.7em">IOMMU-based DMA Protection</span></li>
-        <li><span style="font-size:0.7em">Stack Guard, Heap Guard and NULL Pointer Detection</span></li>
+        <li><span style="font-size:0.6em">Centralized Config Management </span></li>
+        <li><span style="font-size:0.6em">IOMMU-based DMA Protection</span></li>
+        <li><span style="font-size:0.6em">Stack Guard, Heap Guard and NULL Pointer Detection</span></li>
     </ul>
 </div>
 <div class="right">
     <ul style="list-style-type:disc; line-height:0.7;">
-        <li><span style="font-size:0.7em">Compilers / Tools</span></li>
-        <li><span style="font-size:0.7em">Microsoft Visual Studio 2017 tool chain</span></li>
-        <li><span style="font-size:0.7em">Hash-based incremental build</span></li>
-        <li><span style="font-size:0.7em">Build time improvement using multi-threading in GenFds to generate FFS files</span></li>
-        <li><span style="font-size:0.7em">More Info: 
-	<a href="https://github.com/tianocore/tianocore.github.io/wiki/UDK2018#edk-ii-specification-for-udk2018">TianoCore Wiki UDK2018 </a></span></li>
+        <li><span style="font-size:0.6em">Compilers / Tools</span></li>
+        <li><span style="font-size:0.6em">Microsoft Visual Studio 2017 tool chain</span></li>
+        <li><span style="font-size:0.6em">Hash-based incremental build</span></li>
+        <li><span style="font-size:0.6em">Build time improvement using multi-threading in GenFds to generate FFS files</span></li>
+        <li><span style="font-size:0.6em">More Info: 
+	<a href="https://github.com/tianocore/tianocore.github.io/wiki/UDK2018#edk-ii-specification-for-udk2018">EDK II Specification for UDK2018</a></span></li>
     </ul>
 </div>
 
@@ -1103,7 +1103,7 @@ Between the soft feature freeze and the hard feature freeze, previously reviewe
 
 ---?image=/assets/images/slides/Slide48.JPG
 @title[Report a bug on Bugzilla]
-<p align="right"><span class="gold" >@size[1.1em](<b>Report a bug on Bugzilla&nbsp; &nbsp; &nbsp; &nbsp;  </b>)</span>
+<p align="right"><span class="gold" >@size[1.1em](<b>Report an issue on Bugzilla&nbsp; &nbsp; &nbsp; &nbsp;  </b>)</span>
 <span style="font-size:0.75em;" >  </span></p>
 <ul style="list-style-type:none; line-height:0.8;">
   <li><span style="font-size:0.75em">Create a user account  https://bugzilla.tianocore.org/  </span></li>
@@ -1120,7 +1120,7 @@ Between the soft feature freeze and the hard feature freeze, previously reviewe
  @fa[certificate gp-bullet-cyan]<span style="font-size:0.85em">&nbsp;&nbsp;UEFI & PI Boot Flow Process, SEC, PEI, DXE, BDS, TSL, OS</span><br>
  @fa[certificate gp-bullet-yellow]<span style="font-size:0.85em">&nbsp;&nbsp;System Management Mode is in Ring 0 in the System FW </span> <br>
  @fa[certificate gp-bullet-magenta]<span style="font-size:0.85em">&nbsp;&nbsp;Intel® FSP will initialize the processor, chipset, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and memory </span> <br>
- @fa[certificate gp-bullet-ltgreen]<span style="font-size:0.85em">&nbsp;&nbsp;The UEFI.org & Tianocore.org for Specs and Open source  </span> 
+ @fa[certificate gp-bullet-ltgreen]<span style="font-size:0.85em">&nbsp;&nbsp;See UEFI.org & Tianocore.org for Specs and open source content</span> 
 
 
 ---?image=assets/images/gitpitch-audience.jpg
@@ -1223,7 +1223,7 @@ Source https://software.intel.com/sites/default/files/managed/d9/57/a-tour-beyon
   <ul style="list-style-type:disc; line-height:0.6;">
      <li><span style="font-size:0.57em">The static Intel FSP configuration parameters/features are part of the Intel FSP binary and can be customized with BCT  </span></li>
  </ul> 
- <p>See <a href="https://www.intel.com/content/www/us/en/intelligent-systems/intel-firmware-support-package/fsp-firmware-solutions-iot-video.html">Video link<a> - at 41.00 seconds into the video </p>
+ <p>See the <a href="https://www.intel.com/content/www/us/en/intelligent-systems/intel-firmware-support-package/fsp-firmware-solutions-iot-video.html#t=40m54s">Intel FSP Firmware Solutions for the Internet of Things Video<a>, starting at 40m54s.</p>
 
 </ul>
 
