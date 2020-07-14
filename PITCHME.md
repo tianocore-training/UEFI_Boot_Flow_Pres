@@ -956,9 +956,8 @@ Stage 7
   <li><span style="font-size:0.8em" >Configure with Vital Product Data (VPD)-style Platform Configuration Data (PCD) externalized from the modules</span></li>
   <li><span style="font-size:0.8em" >Resultant output state reported via UEFI Platform Initialization (PI) Hand Off Block (HOB)</span></li>
 </ul>
-<p style="line-height:50%"><span style="font-size:0.5em" > <a href="https://cdrdv2.intel.com/v1/dl/getContent/611786"> Intel® FSP External Architecture Specification (EAS) v2.1 </a><BR>
-<p> Resource: <a href="https://software.intel.com/content/www/us/en/develop/articles/intel-firmware-support-package.html">Intel Firmware Support Package</a>
-</span> </p>
+<p style="line-height:50%"><span style="font-size:0.5em" ><a href="https://cdrdv2.intel.com/v1/dl/getContent/611786"> Intel® FSP External Architecture Specification (EAS) v2.1 </a></span><br>
+<span style="font-size:0.5em" >Resource: <a href="https://software.intel.com/content/www/us/en/develop/articles/intel-firmware-support-package.html">Intel Firmware Support Package</a></span></p>
 
 Note:
 
