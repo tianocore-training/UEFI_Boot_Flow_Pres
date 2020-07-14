@@ -916,7 +916,7 @@ Then the PeiCore will continue dispatching the final PEIMs and jump into the Dxe
 <!-- .slide: data-background-transition="none" -->
 <!-- .slide: data-transition="none" -->
 
-#### <p align="center"><span class="gold">MinPlatform @color[yellow](+) Intel<sup>®</sup> FSP Boot Flow </span><br><span style="font-size:0.8em;"> - Staged Approach</span></p>
+#### <p align="right"><span class="gold">MinPlatform @color[yellow](+) Intel<sup>®</sup> FSP Boot Flow <br><span style="font-size:0.8em;"> - Staged Approach</span></span></p>
 
 Note:
 
