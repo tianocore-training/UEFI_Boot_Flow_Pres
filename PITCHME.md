@@ -973,7 +973,7 @@ Note:
      <li><span style="font-size:0.7em" ><a href="https://github.com/tianocore/edk2/tree/master/MdePkg"> /MdePkg </a></span></li>
      <li><span style="font-size:0.7em" ><a href="https://github.com/tianocore/edk2/tree/master/MdeModulePkg"> /MdeModulePkg </a></span></li><br>
   </ul>
-  <li><span style="font-size:0.8em"> Code to interface Intel FSP to EDK II can be found at <a href="https://github.com/tianocore/edk2/tree/master/IntelFsp2Pkg"> /IntelFsp2Pkg </a> and Wrapper at <a href="https://github.com/tianocore/edk2/tree/master/IntelFsp2WrapperPkg"> /IntelFsp2WrapperPkg </a>.</span></li>
+  <li><span style="font-size:0.8em"> Code to interface Intel FSP to EDK II can be found at <a href="https://github.com/tianocore/edk2/tree/master/IntelFsp2Pkg"> /IntelFsp2Pkg</a>, and the Wrapper at <a href="https://github.com/tianocore/edk2/tree/master/IntelFsp2WrapperPkg">/IntelFsp2WrapperPkg</a>.</span></li>
 <br>
 @box[bg-purple-pp text-white rounded fragment](Intel FSP can encapsulate IP protected initialization code PRODUCED by Intel business units) -
 
