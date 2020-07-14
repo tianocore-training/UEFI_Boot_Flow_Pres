@@ -968,7 +968,7 @@ Note:
 
 <ul style="line-height:0.8;">
   <li><span style="font-size:0.8em" >CPU and chipset-specific code for PEIMs inside of the Intel FSP can be open or closed, code at the <a href="https://github.com/IntelFsp/FSP">Intel® FSP Binaries </a> repository.</span></li><br>
-  <li><span style="font-size:0.8em" >PEI core and infrastructure code at the <a href="https://github.com/tianocore/edk2">EDK II Project</a> repo.</span></li>
+  <li><span style="font-size:0.8em" >PEI core and infrastructure code at the <a href="https://github.com/tianocore/edk2">EDK II Project</a> repo:</span></li>
   <ul style="list-style-type:disc" style="line-height:0.8;" >
      <li><span style="font-size:0.7em" ><a href="https://github.com/tianocore/edk2/tree/master/MdePkg"> /MdePkg </a></span></li>
      <li><span style="font-size:0.7em" ><a href="https://github.com/tianocore/edk2/tree/master/MdeModulePkg"> /MdeModulePkg </a></span></li><br>
@@ -994,17 +994,10 @@ Talking point – anyone would could be producer.  IBV could.  Just worry about 
 <!-- .slide: data-transition="none" -->
 
 @title[UEFI Spec pic]    
-#### <p align="center"><span class="gold"   >Latest UEFI Specifications </span> </p>
-<p align="right"><span style="font-size:0.6em" ><a href="http://www.uefi.org"> http://uefi.org</a></span></p>
-
-<br><br><br><br><br><br><br><br><br>
-<p align="right"><span style="font-size:0.6em" ><a href="http://www.uefi.org/specsandtesttools"> http:///uefi.org/specsandtesttools </a>
-</span></p>
-<p align="left"><span style="font-size:0.6em" > Resources Presented at Events from <a href="http://www.uefi.org/learning_center/presentationsandvideos/">
-UEFI Forum Education Link </a></span></p>
+#### <p align="center"><span class="gold">Latest UEFI Specifications</span> </p>
+<p align="center"><span style="font-size:0.6em" ><a href="http://www.uefi.org/specsandtesttools">UEFI specs and test tools</a></span></p>
 
 Note:
-Image needs to be updated as of July 2020
 - UEFI Specifications v2.8B (6/2020)
 - UEFI Shell Specification v2.2 (1/2016)
 - UEFI PI Specification v1.7A (4/2020)
