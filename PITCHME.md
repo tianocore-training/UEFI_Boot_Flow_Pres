@@ -333,6 +333,7 @@ Transition to DXE :
 +++
 @title[UEFI Boot Flow PEI-DXEIPL ]
 #### <p align="center"><span class="gold"   >DXE IPL Characteristics</span>
+DXE IPL:
 - No hard coded addresses allowed
 - Find Largest Physical Memory HOB
    - Ideally this should be near Top Of Memory (TOM)
@@ -362,12 +363,12 @@ DXE drivers are typically stored in flash in compressed form and must be decompr
 +++
 @title[DXE Characteristics]
 #### <p align="right"><span class="gold"   >DXE Characteristics & Responsibilities</span></p>
-- Consumes HOB List from PEI
-- Builds UEFI and DXE Service Tables  
-- EFI System Table
-- UEFI Boot Services Table & UEFI Runtime Services Table
-- Hands off control to the DXE Dispatcher
-- and more  . . . 
+- <span style="font-size:0.8em">Consumes HOB List from PEI</span>
+- <span style="font-size:0.8em">Builds UEFI and DXE Service Tables</span>
+- <span style="font-size:0.8em">EFI System Table</span>
+- <span style="font-size:0.8em">UEFI Boot Services Table & UEFI Runtime Services Table</span>
+- <span style="font-size:0.8em">Hands off control to the DXE Dispatcher</span>
+- <span style="font-size:0.8em">and more  . . . </span>
 
 Note:
 DXE Characteristics
