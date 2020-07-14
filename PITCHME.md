@@ -946,7 +946,7 @@ Stage 7
 
 ---
 @title[Intel FSP Producer]
-##### <p align="center"<span class="gold"   >Intel® FSP  - Producer </span></p>
+##### <p align="center"<span class="gold"   >Intel® FSP Producer </span></p>
 <ul style="line-height:0.8;">
   <li><span style="font-size:0.8em" > Examples of binary instances on <a href="http://www.intel.com/fsp">http://www.intel.com/fsp </a> with integration guides</span></li>
   <ul style="list-style-type:none" style="line-height:0.7;" >
@@ -956,8 +956,8 @@ Stage 7
   <li><span style="font-size:0.8em" >Configure with Vital Product Data (VPD)-style Platform Configuration Data (PCD) externalized from the modules</span></li>
   <li><span style="font-size:0.8em" >Resultant output state reported via UEFI Platform Initialization (PI) Hand Off Block (HOB)</span></li>
 </ul>
-<p style="line-height:50%"><span style="font-size:0.5em" > <a href="https://cdrdv2.intel.com/v1/dl/getContent/611786"> Intel® Firmware Support Package (Intel® FSP) External Architecture Specification (EAS) v2.1 </a><BR>
-<p> Resource: <a href="https://software.intel.com/en-us/articles/intel-firmware-support-package"></a>
+<p style="line-height:50%"><span style="font-size:0.5em" > <a href="https://cdrdv2.intel.com/v1/dl/getContent/611786"> Intel® FSP External Architecture Specification (EAS) v2.1 </a><BR>
+<p> Resource: <a href="https://software.intel.com/content/www/us/en/develop/articles/intel-firmware-support-package.html">Intel Firmware Support Package</a>
 </span> </p>
 
 Note:
