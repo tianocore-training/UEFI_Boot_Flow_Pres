@@ -237,20 +237,19 @@ Note:
 #### <p align="right"><span class="gold" >Starting at the reset vector </span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<b>SEC</b> </span></p>
 
 The Processor Executes SEC starting at the first fetch from the reset vector:
-<span style="font-size:0.7em">
-- SEC Consumes the Reset vector at address space 4GB - 0x10
-- Serving as the root of trust 
-- May choose to authenticate the PEI Foundation
-- Initialize the Application Processors (AP) waking stub
-- Early microcode update
-- Collect BIST (Built-in Self Test)
-- Set up TEMP Memory (CAR, NEM)
-- Switch to Protected Mode (32 bit flat mode)
-- Other charactistics of SEC:
-    - Executed in place from flash
-    - Written in assembly (16-bit & 32-bit) on Intel Architecuture
-    - BSP is the only processor executing (single thread)
-</span>
+
+<span style="font-size:0.7em">- SEC Consumes the Reset vector at address space 4GB - 0x10</span>
+<span style="font-size:0.7em">- Serving as the root of trust</span>
+<span style="font-size:0.7em">- May choose to authenticate the PEI Foundation</span>
+<span style="font-size:0.7em">- Initialize the Application Processors (AP) waking stub</span>
+<span style="font-size:0.7em">- Early microcode update</span>
+<span style="font-size:0.7em">- Collect BIST (Built-in Self Test)</span>
+<span style="font-size:0.7em">- Set up TEMP Memory (CAR, NEM)</span>
+<span style="font-size:0.7em">- Switch to Protected Mode (32 bit flat mode)</span>
+<span style="font-size:0.7em">- Other charactistics of SEC:</span>
+<span style="font-size:0.5em">    - Executed in place from flash</span>
+<span style="font-size:0.5em">    - Written in assembly (16-bit & 32-bit) on Intel Architecuture</span>
+<span style="font-size:0.5em">    - BSP is the only processor executing (single thread)</span>
 
 Note:
 SEC Function <Br>
