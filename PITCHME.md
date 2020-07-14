@@ -1223,7 +1223,7 @@ Source https://software.intel.com/sites/default/files/managed/d9/57/a-tour-beyon
   <ul style="list-style-type:disc; line-height:0.6;">
      <li><span style="font-size:0.57em">The static Intel FSP configuration parameters/features are part of the Intel FSP binary and can be customized with BCT  </span></li>
  </ul> 
- <p>See the <a href="https://www.intel.com/content/www/us/en/intelligent-systems/intel-firmware-support-package/fsp-firmware-solutions-iot-video.html#t=40m54s">Intel FSP Firmware Solutions for the Internet of Things Video<a>, starting at 40m54s.</p>
+ <p>See the <a href="https://www.intel.com/content/www/us/en/intelligent-systems/intel-firmware-support-package/fsp-firmware-solutions-iot-video.html#t=40m54s">Intel FSP Firmware Solutions for the Internet of Things Video</a>, starting at 40m54s.</p>
 
 </ul>
 
