@@ -79,7 +79,6 @@ Note:
 @snapend
 
 @snap[north-east span-50 fragment]
-<br>
 <p style="line-height:50%" ><br>&nbsp;</p>
 <ul style="list-style-type:disc; line-height:0.7;">
  <li><span style="font-size:0.5em">GBe NIC, WiFi, Bluetooth, WiGig </span></li>
@@ -238,7 +237,7 @@ Note:
 #### <p align="right"><span class="gold" >Starting at the reset vector </span><span style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<b>SEC</b> </span></p>
 
 The Processor Executes SEC starting at the first fetch from the reset vector:
-
+<span style="font-size:0.7em">
 - SEC Consumes the Reset vector at address space 4GB - 0x10
 - Serving as the root of trust 
 - May choose to authenticate the PEI Foundation
@@ -251,6 +250,7 @@ The Processor Executes SEC starting at the first fetch from the reset vector:
     - Executed in place from flash
     - Written in assembly (16-bit & 32-bit) on Intel Architecuture
     - BSP is the only processor executing (single thread)
+</span>
 
 Note:
 SEC Function <Br>
